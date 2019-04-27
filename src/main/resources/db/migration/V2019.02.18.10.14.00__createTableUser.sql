@@ -9,5 +9,6 @@ phone_number varchar (255) not null,
 password varchar(255) not null,
 photo varchar(500),
 role varchar(255),
+join_date date,
 primary key(user_id)
 );

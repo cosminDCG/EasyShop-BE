@@ -2,6 +2,7 @@ package EasyShop.dao;
 
 import EasyShop.dto.UserDTO;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface UserDAO {
@@ -17,4 +18,6 @@ public interface UserDAO {
     UserDTO getUserById(int id);
 
     void deleteUserById(int user_id);
+
+    List<UserDTO> getAllUsers();
 }

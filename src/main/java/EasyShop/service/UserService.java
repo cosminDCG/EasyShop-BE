@@ -2,6 +2,8 @@ package EasyShop.service;
 
 import EasyShop.dto.UserDTO;
 
+import java.util.List;
+
 public interface UserService {
 
     Boolean registerUser(UserDTO userDTO);
@@ -15,4 +17,6 @@ public interface UserService {
     UserDTO getUserById(int id);
 
     Boolean deleteUserById(int user_id);
+
+    List<UserDTO> getAllUsers();
 }

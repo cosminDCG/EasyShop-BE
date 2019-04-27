@@ -69,6 +69,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return true;
     }
 
+    public List<UserDTO> getAllUsers(){
+        return userDAO.getAllUsers();
+    }
+
     @Override
     public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {

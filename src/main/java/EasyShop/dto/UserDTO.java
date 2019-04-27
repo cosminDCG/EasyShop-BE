@@ -1,5 +1,7 @@
 package EasyShop.dto;
 
+import java.util.Date;
+
 public class UserDTO {
 
     private int id;
@@ -12,6 +14,7 @@ public class UserDTO {
     private String password;
     private String photo;
     private String role;
+    private Date joinDate;
 
     public UserDTO() {}
 
@@ -104,5 +107,13 @@ public class UserDTO {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public Date getJoinDate() {
+        return joinDate;
+    }
+
+    public void setJoinDate(Date joinDate) {
+        this.joinDate = joinDate;
     }
 }

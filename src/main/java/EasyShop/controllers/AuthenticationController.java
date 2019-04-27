@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @Controller
 public class AuthenticationController {
@@ -91,6 +92,14 @@ public class AuthenticationController {
         Boolean ok = userService.deleteUserById(id);
         if(ok == true)
             return new ResponseEntity(ok, HttpStatus.OK);
+        else return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
+    }
+
+    @RequestMapping(value = "/user/all", method = RequestMethod.GET)
+    public ResponseEntity getAllUsers(){
+        List<UserDTO> userDTOList = userService.getAllUsers();
+        if (userDTOList != null)
+            return new ResponseEntity(userDTOList, HttpStatus.OK);
         else return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
     }
 

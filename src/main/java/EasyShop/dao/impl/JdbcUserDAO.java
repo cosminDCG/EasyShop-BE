@@ -11,6 +11,8 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -22,7 +24,7 @@ public class JdbcUserDAO implements UserDAO {
     @Override
     public void registerUser(UserDTO user){
         String sqlInsert = "" +
-                "INSERT INTO user(first_name, last_name,email, address, city, phone_number, password, photo, role) VALUES( " +
+                "INSERT INTO user(first_name, last_name,email, address, city, phone_number, password, photo, role, join_date) VALUES( " +
                 "    :firstName, " +
                 "    :lastName, " +
                 "    :email, " +
@@ -31,7 +33,8 @@ public class JdbcUserDAO implements UserDAO {
                 "    :phoneNumber, " +
                 "    :password, " +
                 "    'avatar.png', " +
-                "    'user' " +
+                "    'user', " +
+                "    SYSDATE() " +
                 ")";
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
@@ -52,7 +55,8 @@ public class JdbcUserDAO implements UserDAO {
                 "SELECT " +
                 "    * " +
                 "FROM user " +
-                "WHERE email = :email ";
+                "LEFT JOIN ban ON  user.user_id = ban.banned_user  " +
+                "WHERE user.email = :email ";
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
         namedParameters.addValue("email", email);
@@ -60,6 +64,7 @@ public class JdbcUserDAO implements UserDAO {
         UserDTO userDTO = null;
         try {
             userDTO = jdbcTemplate.queryForObject(sqlSelect, namedParameters, new UserDTOMapper());
+
         } catch (EmptyResultDataAccessException ignored) {
 
         }
@@ -142,6 +147,39 @@ public class JdbcUserDAO implements UserDAO {
         jdbcTemplate.update(sqlDelete, namedParameters);
     }
 
+    @Override
+    public List<UserDTO> getAllUsers(){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    * " +
+                "FROM user ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+
+        return jdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            List<UserDTO> results = new ArrayList<>();
+            while(rs.next()) {
+                UserDTO userDTO = new UserDTO();
+                userDTO.setId(rs.getInt("user_id"));
+                userDTO.setEmail(rs.getString("email"));
+                userDTO.setFirstName(rs.getString("first_name"));
+                userDTO.setLastName(rs.getString("last_name"));
+                userDTO.setPassword(rs.getString("password"));
+                userDTO.setAddress(rs.getString("address"));
+                userDTO.setCity(rs.getString("city"));
+                userDTO.setPhoneNumber(rs.getString("phone_number"));
+                userDTO.setPhoto(rs.getString("photo"));
+                userDTO.setRole(rs.getString("role"));
+                userDTO.setJoinDate(rs.getDate("join_date"));
+                results.add(userDTO);
+            }
+            return results;
+
+        });
+
+    }
+
     class UserDTOMapper implements RowMapper<UserDTO> {
         @Override
         public UserDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -156,6 +194,7 @@ public class JdbcUserDAO implements UserDAO {
             user.setPhoneNumber(rs.getString("phone_number"));
             user.setPhoto(rs.getString("photo"));
             user.setRole(rs.getString("role"));
+            user.setJoinDate(rs.getDate("join_date"));
             return user;
         }
     }

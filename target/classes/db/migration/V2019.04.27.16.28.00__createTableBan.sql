@@ -1,4 +1,4 @@
-create table if not exists promo(
+create table if not exists ban(
 ban_id int auto_increment,
 banned_by int not null,
 banned_user int not null,
