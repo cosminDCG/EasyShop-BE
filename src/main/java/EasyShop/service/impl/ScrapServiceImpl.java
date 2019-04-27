@@ -33,7 +33,7 @@ import java.util.stream.Collectors;
 @Service
 public class ScrapServiceImpl implements ScrapService {
 
-    private String DASHBOARD_FOLDER = "F:\\EasyShop-Frontend\\EasyShop\\src\\assets\\dashboard";
+    private String DASHBOARD_FOLDER = "F:\\EasyShop-FE\\src\\assets\\dashboard";
 
     @Autowired
     private ItemDAO itemDAO;
