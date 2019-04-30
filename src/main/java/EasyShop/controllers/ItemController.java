@@ -10,11 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.net.MalformedURLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -60,5 +62,16 @@ public class ItemController {
     public ResponseEntity getPropertiesByProductId(@RequestParam int id){
         List<ItemPropertiesDTO> itemPropertiesDTOList = itemPropertiesService.getPropertiesByProductId(id);
         return new ResponseEntity(itemPropertiesDTOList, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/item/cheapest", method = RequestMethod.POST)
+    public ResponseEntity getCheapestChoices(@RequestBody List<String> criterias) {
+
+        List<ItemDTO> itemDTOList = new ArrayList<>();
+        for(String criteria : criterias){
+            itemDTOList.add(itemService.getCheapestChoice(criteria));
+        }
+
+        return new ResponseEntity(itemDTOList, HttpStatus.OK);
     }
 }

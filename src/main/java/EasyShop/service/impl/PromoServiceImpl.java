@@ -93,6 +93,12 @@ public class PromoServiceImpl implements PromoService {
         return true;
     }
 
+    public Boolean setCustomPromo(PromoDTO promoDTO){
+        promoDTO.setPromoCode(generatePromoCode());
+        Boolean promoCheck = insertPromo(promoDTO);
+        return promoCheck;
+    }
+
     public List<PromoDTO> getPromosByUserId(int user_id){
         return promoDAO.getPromosByUserId(user_id);
     }

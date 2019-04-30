@@ -15,4 +15,6 @@ public interface PromoService {
 
     List<PromoDTO> getPromosByUserId(int user_id);
 
+    Boolean setCustomPromo(PromoDTO promoDTO);
+
 }

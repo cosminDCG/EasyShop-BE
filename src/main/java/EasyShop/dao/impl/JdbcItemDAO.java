@@ -163,6 +163,35 @@ public class JdbcItemDAO implements ItemDAO {
         });
     }
 
+    @Override
+    public ItemDTO getCheapestChoice(String criteria){
+        String sqlSelect = "" +
+                "SELECT *, match(name) against(:criteria) as relevance " +
+                "FROM items " +
+                "WHERE match(name) against(:criteria) " +
+                "ORDER BY relevance desc, price asc " +
+                "LIMIT 1";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("criteria", criteria);
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            ItemDTO results = new ItemDTO();
+            while(rs.next()) {
+                results.setId(rs.getInt("item_id"));
+                results.setName(rs.getString("name"));
+                results.setDescription(rs.getString("description"));
+                results.setCategory(rs.getString("category"));
+                results.setPrice(rs.getString("price"));
+                results.setShop(rs.getString("shop"));
+                results.setPhoto(rs.getString("photo"));
+            }
+            return results;
+
+        });
+    }
+
     class ItemDTOMapper implements RowMapper<ItemDTO> {
         @Override
         public ItemDTO mapRow(ResultSet rs, int rowNum) throws SQLException {

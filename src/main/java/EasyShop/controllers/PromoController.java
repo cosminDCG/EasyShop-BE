@@ -49,4 +49,12 @@ public class PromoController {
             return new ResponseEntity(promoDTOList, HttpStatus.OK);
         else return new ResponseEntity(null, HttpStatus.BAD_REQUEST);
     }
+
+    @RequestMapping(value = "/promo/custom", method = RequestMethod.POST)
+    public ResponseEntity setCustomPromo(@RequestBody PromoDTO promoDTO) {
+        Boolean ok = promoService.setCustomPromo(promoDTO);
+        if(ok == true)
+            return new ResponseEntity(ok, HttpStatus.OK);
+        else return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
+    }
 }

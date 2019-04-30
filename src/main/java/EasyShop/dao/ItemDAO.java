@@ -17,4 +17,6 @@ public interface ItemDAO {
     int getReviewSum(int item_id);
 
     int getReviewCount(int item_id);
+
+    ItemDTO getCheapestChoice(String criteria);
 }
