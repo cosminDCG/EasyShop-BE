@@ -1,7 +1,9 @@
 package EasyShop.service.impl;
 
 import EasyShop.dao.UserDAO;
+import EasyShop.dto.OrderDTO;
 import EasyShop.dto.UserDTO;
+import EasyShop.service.OrderService;
 import EasyShop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -25,6 +27,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private OrderService orderService;
 
     public Boolean registerUser(UserDTO userDTO) {
 
@@ -70,7 +75,16 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     public List<UserDTO> getAllUsers(){
-        return userDAO.getAllUsers();
+        List<UserDTO> userDTOList = userDAO.getAllUsers();
+
+        for(UserDTO userDTO : userDTOList){
+            userDTO.setOrders(orderService.getOrdersByUserId(userDTO.getId()));
+            
+            for(OrderDTO orderDTO : userDTO.getOrders()){
+                orderDTO.setItems(orderService.getOrderItemsByOrderId(orderDTO.getId()));
+            }
+        }
+        return userDTOList;
     }
 
     @Override

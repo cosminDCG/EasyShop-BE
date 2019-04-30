@@ -1,6 +1,7 @@
 package EasyShop.dto;
 
 import java.util.Date;
+import java.util.List;
 
 public class OrderDTO {
 
@@ -14,6 +15,7 @@ public class OrderDTO {
     private String billingPerson;
     private String cashPay;
     private Date data;
+    private List<ItemDTO> items;
 
     public OrderDTO() {
     }
@@ -106,5 +108,13 @@ public class OrderDTO {
 
     public void setCashPay(String cashPay) {
         this.cashPay = cashPay;
+    }
+
+    public List<ItemDTO> getItems() {
+        return items;
+    }
+
+    public void setItems(List<ItemDTO> items) {
+        this.items = items;
     }
 }
