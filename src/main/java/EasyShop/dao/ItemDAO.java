@@ -19,4 +19,6 @@ public interface ItemDAO {
     int getReviewCount(int item_id);
 
     ItemDTO getCheapestChoice(String criteria);
+
+    List<String> getAllShops();
 }

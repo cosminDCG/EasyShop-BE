@@ -192,6 +192,27 @@ public class JdbcItemDAO implements ItemDAO {
         });
     }
 
+    @Override
+    public List<String> getAllShops(){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    distinct(shop) " +
+                "FROM items ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            List<String> results = new ArrayList<>();
+            while(rs.next()) {
+                String shop = rs.getString("shop");
+                results.add(shop);
+            }
+            return results;
+
+        });
+    }
+
     class ItemDTOMapper implements RowMapper<ItemDTO> {
         @Override
         public ItemDTO mapRow(ResultSet rs, int rowNum) throws SQLException {

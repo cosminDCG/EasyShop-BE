@@ -31,4 +31,8 @@ public class ItemServiceImpl implements ItemService {
     public ItemDTO getCheapestChoice(String criteria) {
         return itemDAO.getCheapestChoice(criteria);
     }
+
+    public  List<String> getAllShops() {
+        return itemDAO.getAllShops();
+    }
 }

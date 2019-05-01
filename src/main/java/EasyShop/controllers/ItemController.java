@@ -74,4 +74,10 @@ public class ItemController {
 
         return new ResponseEntity(itemDTOList, HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/item/shops", method = RequestMethod.GET)
+    public ResponseEntity getAllShops() {
+        List<String> shops = itemService.getAllShops();
+        return new ResponseEntity(shops, HttpStatus.OK);
+    }
 }

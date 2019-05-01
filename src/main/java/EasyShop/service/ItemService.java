@@ -13,4 +13,6 @@ public interface ItemService {
     List<String> getAllCategories();
 
     ItemDTO getCheapestChoice(String criteria);
+
+    List<String> getAllShops();
 }
