@@ -91,10 +91,14 @@ public class ItemController {
         for(String shop : shops){
             List<ItemDTO> currentShopItems = new ArrayList<>();
             for ( String criteria : criterias){
-                currentShopItems.add(itemService.getCheapestSinglePlace(criteria, shop));
+                ItemDTO itemToAdd = itemService.getCheapestSinglePlace(criteria, shop);
+                currentShopItems.add(itemToAdd);
             }
-            if(itemService.getTotalPriceFromList(currentShopItems) <= minim){
-                result = currentShopItems;
+            if(itemService.countFoundItems(currentShopItems) >= result.size()){
+                if (itemService.getTotalPriceFromList(currentShopItems) <= minim) {
+                    result = currentShopItems;
+                    minim = itemService.getTotalPriceFromList(currentShopItems);
+                }
             }
         }
 

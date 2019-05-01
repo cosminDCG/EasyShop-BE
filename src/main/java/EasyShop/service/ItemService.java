@@ -21,4 +21,6 @@ public interface ItemService {
     Float convertPriceToFloat(String price);
 
     Float getTotalPriceFromList(List<ItemDTO> itemDTOList);
+
+    int countFoundItems(List<ItemDTO> itemDTOList);
 }

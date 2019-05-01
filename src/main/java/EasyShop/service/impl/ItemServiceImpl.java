@@ -50,9 +50,21 @@ public class ItemServiceImpl implements ItemService {
     public Float getTotalPriceFromList(List<ItemDTO> itemDTOList) {
         Float sum = 0.0f;
         for (ItemDTO itemDTO : itemDTOList ){
-            sum += convertPriceToFloat(itemDTO.getPrice());
+            if(itemDTO.getPrice() != null)
+                sum += convertPriceToFloat(itemDTO.getPrice());
         }
 
         return sum;
+    }
+
+    public int countFoundItems(List<ItemDTO> itemDTOList) {
+        int count = 0;
+
+        for(ItemDTO itemDTO : itemDTOList){
+            if(itemDTO.getId() != 0)
+                count ++;
+        }
+
+        return count;
     }
 }
