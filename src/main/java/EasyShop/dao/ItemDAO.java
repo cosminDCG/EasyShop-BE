@@ -21,4 +21,6 @@ public interface ItemDAO {
     ItemDTO getCheapestChoice(String criteria);
 
     List<String> getAllShops();
+
+    ItemDTO getCheapestSinglePlace(String criteria, String place);
 }

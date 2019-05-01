@@ -80,4 +80,24 @@ public class ItemController {
         List<String> shops = itemService.getAllShops();
         return new ResponseEntity(shops, HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/item/single", method = RequestMethod.POST)
+    public ResponseEntity getCheapestSinglePlace(@RequestBody List<String> criterias) {
+
+        List<String> shops = itemService.getAllShops();
+        List<ItemDTO> result = new ArrayList<>();
+        float minim = Float.MAX_VALUE;
+
+        for(String shop : shops){
+            List<ItemDTO> currentShopItems = new ArrayList<>();
+            for ( String criteria : criterias){
+                currentShopItems.add(itemService.getCheapestSinglePlace(criteria, shop));
+            }
+            if(itemService.getTotalPriceFromList(currentShopItems) <= minim){
+                result = currentShopItems;
+            }
+        }
+
+        return new ResponseEntity(result, HttpStatus.OK);
+    }
 }

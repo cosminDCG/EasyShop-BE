@@ -35,4 +35,24 @@ public class ItemServiceImpl implements ItemService {
     public  List<String> getAllShops() {
         return itemDAO.getAllShops();
     }
+
+    public ItemDTO getCheapestSinglePlace(String criteria, String place) {
+        return itemDAO.getCheapestSinglePlace(criteria, place);
+    }
+
+    public Float convertPriceToFloat(String price) {
+        String[] convertedPrice = price.split("Lei");
+        convertedPrice[0] = convertedPrice[0].replace(".", "");
+        convertedPrice[0] = convertedPrice[0].replace(",", ".");
+        return Float.parseFloat(convertedPrice[0]);
+    }
+
+    public Float getTotalPriceFromList(List<ItemDTO> itemDTOList) {
+        Float sum = 0.0f;
+        for (ItemDTO itemDTO : itemDTOList ){
+            sum += convertPriceToFloat(itemDTO.getPrice());
+        }
+
+        return sum;
+    }
 }

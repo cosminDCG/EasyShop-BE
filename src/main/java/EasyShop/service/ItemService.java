@@ -15,4 +15,10 @@ public interface ItemService {
     ItemDTO getCheapestChoice(String criteria);
 
     List<String> getAllShops();
+
+    ItemDTO getCheapestSinglePlace(String criteria, String place);
+
+    Float convertPriceToFloat(String price);
+
+    Float getTotalPriceFromList(List<ItemDTO> itemDTOList);
 }
