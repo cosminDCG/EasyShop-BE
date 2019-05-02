@@ -45,6 +45,19 @@ public class OrderController {
         else return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
     }
 
+    @RequestMapping(value = "/order/cart/insert/multiple", method = RequestMethod.POST)
+    public ResponseEntity insertCartMultiple(@RequestParam int user_id, @RequestBody List<ItemDTO> itemDTOList){
+
+        Boolean ok = true;
+        for(ItemDTO itemDTO : itemDTOList){
+            ok = orderService.insertCart(user_id, itemDTO.getId(), itemDTO.getQuantity());
+            if(ok == false)
+                return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity(ok, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/order/cart/items", method = RequestMethod.GET)
     public ResponseEntity getOrderItems(@RequestParam int user_id){
         List<ItemDTO> itemDTOList = orderService.getCartItems(user_id);
