@@ -25,11 +25,13 @@ public class OrderServiceImpl implements OrderService {
 
     public Boolean insertCart(int user_id, int item_id, int quantity){
 
-        orderDAO.insertCart(user_id, item_id, quantity);
         int order_id = orderDAO.getInProgressOrderByUserId(user_id);
         int check = orderDAO.checkIfItemExistsInCart(item_id, order_id);
+        orderDAO.insertCart(user_id, item_id, quantity);
+
         if(check != 0)
             return false;
+        
         return true;
 
     }
