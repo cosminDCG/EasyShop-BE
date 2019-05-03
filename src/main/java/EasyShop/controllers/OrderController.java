@@ -42,7 +42,7 @@ public class OrderController {
         Boolean ok = orderService.insertCart(user_id, item_id, quantity);
         if (ok == true)
             return new ResponseEntity(ok, HttpStatus.OK);
-        else return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
+        else return new ResponseEntity(false, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/order/cart/insert/multiple", method = RequestMethod.POST)
@@ -52,7 +52,7 @@ public class OrderController {
         for(ItemDTO itemDTO : itemDTOList){
             ok = orderService.insertCart(user_id, itemDTO.getId(), itemDTO.getQuantity());
             if(ok == false)
-                return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
+                return new ResponseEntity(false, HttpStatus.OK);
         }
 
         return new ResponseEntity(ok, HttpStatus.OK);

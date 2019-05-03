@@ -85,6 +85,70 @@ public class JdbcOrderDAO implements OrderDAO {
     }
 
     @Override
+    public int checkIfItemExistsInCart(int item_id, int order_id){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    cart_id " +
+                "FROM cart  " +
+                "WHERE item_id = :item_id " +
+                "AND order_id = :order_id ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("order_id", order_id);
+        namedParameters.addValue("item_id", item_id);
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            int results = 0;
+            while(rs.next()) {
+                results = rs.getInt("cart_id");
+            }
+            return results;
+
+        });
+
+    }
+
+    @Override
+    public int getQuantityByCartId(int cart_id){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    quantity " +
+                "FROM cart  " +
+                "WHERE cart_id = :cart_id ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("cart_id", cart_id);
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            int results = 0;
+            while(rs.next()) {
+                results = rs.getInt("quantity");
+            }
+            return results;
+
+        });
+    }
+
+    @Override
+    public void addQuantityToItem(int cart_id, int quantity){
+        String sqlUpdate = "" +
+                "UPDATE cart " +
+                "SET quantity =:quantity " +
+                "WHERE cart_id = :cart_id ";
+
+        int currentQuantity = getQuantityByCartId(cart_id);
+        int updateQuantity = currentQuantity + quantity;
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("cart_id", cart_id);
+        namedParameters.addValue("quantity", updateQuantity);
+
+        jdbcTemplate.update(sqlUpdate, namedParameters);
+    }
+
+    @Override
     public void insertCart(int user_id, int item_id, int quantity){
 
         int order = 0;
@@ -93,6 +157,12 @@ public class JdbcOrderDAO implements OrderDAO {
             order = getInProgressOrderByUserId(user_id);
         } else order = getInProgressOrderByUserId(user_id);
 
+        int existing_item_id = checkIfItemExistsInCart(item_id, order);
+
+        if(existing_item_id != 0){
+            addQuantityToItem(existing_item_id, quantity);
+            return;
+        }
         String sqlInsert = "" +
                 "INSERT INTO cart(order_id, item_id, quantity) VALUES( " +
                 "    :order_id, " +

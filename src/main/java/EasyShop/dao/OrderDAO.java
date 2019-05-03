@@ -23,4 +23,12 @@ public interface OrderDAO {
     List<OrderDTO> getOrdersByUserId(int user_id);
 
     List<ItemDTO> getOrderItemsByOrderId(int order_id);
+
+    int getInProgressOrderByUserId(int user_id);
+
+    int checkIfItemExistsInCart(int item_id, int order_id);
+
+    int getQuantityByCartId(int cart_id);
+
+    void addQuantityToItem(int cart_id, int quantity);
 }
