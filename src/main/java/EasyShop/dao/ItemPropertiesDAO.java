@@ -9,4 +9,6 @@ public interface ItemPropertiesDAO {
     void insertProperties(List<ItemPropertiesDTO> itemPropertiesDTOS);
 
     List<ItemPropertiesDTO> getPropertiesByProductId(int id);
+
+    void truncateProperties();
 }

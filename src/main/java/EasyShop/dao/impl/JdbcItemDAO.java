@@ -244,6 +244,16 @@ public class JdbcItemDAO implements ItemDAO {
         });
     }
 
+    @Override
+    public void truncateItems(){
+        String sqlTruncate = "" +
+                "TRUNCATE TABLE items ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+
+        jdbcTemplate.update(sqlTruncate, namedParameters);
+    }
+
     class ItemDTOMapper implements RowMapper<ItemDTO> {
         @Override
         public ItemDTO mapRow(ResultSet rs, int rowNum) throws SQLException {

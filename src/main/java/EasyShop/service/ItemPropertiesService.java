@@ -9,4 +9,6 @@ public interface ItemPropertiesService {
     Boolean insertProperties(List<ItemPropertiesDTO> itemPropertiesDTOS);
 
     List<ItemPropertiesDTO> getPropertiesByProductId(int id);
+
+    void truncateProperties();
 }

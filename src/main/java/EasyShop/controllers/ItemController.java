@@ -33,6 +33,8 @@ public class ItemController {
 
     @RequestMapping(value = "/scrap", method = RequestMethod.POST)
     public ResponseEntity scrapPage(@RequestParam String page) throws InterruptedException, MalformedURLException {
+
+        scrapService.saveLink(page);
         List<ItemDTO> itemDTOList;
 
         if (page.contains("emag"))

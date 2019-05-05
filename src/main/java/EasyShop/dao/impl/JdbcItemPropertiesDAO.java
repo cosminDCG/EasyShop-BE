@@ -69,4 +69,14 @@ public class JdbcItemPropertiesDAO implements ItemPropertiesDAO {
 
         });
     }
+
+    @Override
+    public void truncateProperties(){
+        String sqlTruncate = "" +
+                "TRUNCATE TABLE item_properties ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+
+        jdbcTemplate.update(sqlTruncate, namedParameters);
+    }
 }

@@ -41,7 +41,9 @@ public class ItemServiceImpl implements ItemService {
     }
 
     public Float convertPriceToFloat(String price) {
+        
         String[] convertedPrice = price.split("Lei");
+        convertedPrice[0] = convertedPrice[0].substring(0, convertedPrice[0].length() - 1);
         convertedPrice[0] = convertedPrice[0].replace(".", "");
         convertedPrice[0] = convertedPrice[0].replace(",", ".");
         return Float.parseFloat(convertedPrice[0]);
@@ -66,5 +68,9 @@ public class ItemServiceImpl implements ItemService {
         }
 
         return count;
+    }
+
+    public void truncateItems(){
+        itemDAO.truncateItems();
     }
 }

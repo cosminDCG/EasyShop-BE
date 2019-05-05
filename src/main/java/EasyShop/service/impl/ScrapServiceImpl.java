@@ -2,6 +2,7 @@ package EasyShop.service.impl;
 
 import EasyShop.configuration.SeleniumConfigurations;
 import EasyShop.dao.ItemDAO;
+import EasyShop.dao.ScrapDAO;
 import EasyShop.dto.ItemDTO;
 import EasyShop.dto.ItemPropertiesDTO;
 import EasyShop.service.ScrapService;
@@ -37,6 +38,9 @@ public class ScrapServiceImpl implements ScrapService {
 
     @Autowired
     private ItemDAO itemDAO;
+
+    @Autowired
+    private ScrapDAO scrapDAO;
 
     public void saveImageFromUrl(String imageUrl, int imageName) throws IOException{
         URL url = new URL(imageUrl);
@@ -210,6 +214,14 @@ public class ScrapServiceImpl implements ScrapService {
 
         driver.close();
         return itemDTOList;
+    }
+
+    public void saveLink(String page){
+        scrapDAO.saveLink(page);
+    }
+
+    public List<String> getAllLinks(){
+        return scrapDAO.getAllLinks();
     }
     
 }

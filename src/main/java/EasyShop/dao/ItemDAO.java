@@ -23,4 +23,6 @@ public interface ItemDAO {
     List<String> getAllShops();
 
     ItemDTO getCheapestSinglePlace(String criteria, String place);
+
+    void truncateItems();
 }

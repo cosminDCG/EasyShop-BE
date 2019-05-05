@@ -10,4 +10,8 @@ public interface ScrapService {
     List<ItemDTO> getItemsFromEmag(String page);
 
     List<ItemDTO> getItemsFromCarrefour(String page) throws InterruptedException, MalformedURLException;
+
+    void saveLink(String page);
+
+    List<String> getAllLinks();
 }

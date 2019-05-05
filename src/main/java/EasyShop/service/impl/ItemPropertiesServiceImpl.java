@@ -23,4 +23,9 @@ public class ItemPropertiesServiceImpl implements ItemPropertiesService {
     public List<ItemPropertiesDTO> getPropertiesByProductId(int id){
         return itemPropertiesDAO.getPropertiesByProductId(id);
     }
+
+    public void truncateProperties(){
+        itemPropertiesDAO.truncateProperties();
+    }
+    
 }
