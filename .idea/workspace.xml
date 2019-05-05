@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="25bfd7ec-0692-4b0d-ba24-f68f5e117596" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -149,31 +152,32 @@
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.53" value="1" />
+          <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.71" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="62" />
+          <entry key="java" value="68" />
           <entry key="sql" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="62" />
+          <entry key="JAVA" value="68" />
           <entry key="SQL" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5392" />
+          <entry key="java" value="5976" />
           <entry key="sql" value="69" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5392" />
+          <entry key="JAVA" value="5976" />
           <entry key="SQL" value="69" />
         </counts>
       </usages-collector>
@@ -182,19 +186,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/OrderController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="58" column="65" lean-forward="true" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="172" column="31" lean-forward="true" selection-start-line="172" selection-start-column="31" selection-end-line="172" selection-end-column="31" />
+            <state relative-caret-position="2737">
+              <caret line="172" column="26" selection-start-line="172" selection-start-column="26" selection-end-line="172" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -202,7 +197,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/ItemService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
+            <state relative-caret-position="374">
               <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
             </state>
           </provider>
@@ -211,26 +206,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcOrderDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="37" column="58" lean-forward="true" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="59" column="15" selection-start-line="59" selection-start-column="15" selection-end-line="59" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/OrderService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
+            <state relative-caret-position="442">
+              <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -238,17 +215,42 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/OrderServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
+            <state relative-caret-position="425">
               <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
+            <state relative-caret-position="445">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="51" column="35" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="35" />
+              <folding>
+                <element signature="e#2291#2292#0" expanded="true" />
+                <element signature="e#2337#2338#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="78" selection-start-line="22" selection-start-column="78" selection-end-line="22" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -257,10 +259,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/UserServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/AuthenticationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="81" column="12" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
+            <state relative-caret-position="150">
+              <caret line="46" column="57" lean-forward="true" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/UserDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcUserDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="132" column="55" selection-start-line="132" selection-start-column="55" selection-end-line="132" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -313,12 +336,8 @@
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ReviewServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/controllers/ReviewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ScrapServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V2019.04.27.16.28.00__createTableBan.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/EasyShop/controllers/AuthenticationController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V2019.02.18.10.14.00__createTableUser.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcUserDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/BanDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/dto/BanDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/BanService.java" />
@@ -329,7 +348,6 @@
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/PromoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/controllers/PromoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/dto/OrderDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/dto/UserDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/ItemDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemDAO.java" />
@@ -341,6 +359,11 @@
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/controllers/OrderController.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcUserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/EasyShop/controllers/AuthenticationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/UserServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -388,11 +411,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="1939" />
-    <option name="height" value="1099" />
+    <option name="width" value="1940" />
+    <option name="height" value="1100" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -402,6 +425,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -510,7 +534,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -520,7 +543,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556881468157" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557053179692" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -657,10 +680,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2536913" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -690,96 +713,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>90</line>
-          <properties />
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>91</line>
-          <properties />
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>92</line>
-          <properties />
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>93</line>
-          <properties />
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>94</line>
-          <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>95</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>96</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>97</line>
-          <properties />
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>100</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>101</line>
-          <properties />
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>99</line>
-          <properties />
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>102</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java</url>
-          <line>107</line>
-          <properties />
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/WishlistController.java">
@@ -916,24 +849,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/AuthenticationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V2019.02.18.10.14.00__createTableUser.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1038,20 +957,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dto/ItemDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
           <caret line="94" column="28" selection-start-line="94" selection-start-column="28" selection-end-line="94" selection-end-column="28" />
-          <folding>
-            <element signature="e#1886#1887#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,34 +971,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcUserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="81" column="12" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/OrderService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcOrderDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="37" column="58" lean-forward="true" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -1100,34 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/OrderController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="58" column="65" lean-forward="true" selection-start-line="58" selection-start-column="65" selection-end-line="58" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="172" column="31" lean-forward="true" selection-start-line="172" selection-start-column="31" selection-end-line="172" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/ItemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
@@ -1135,12 +992,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/OrderController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
+        <state relative-caret-position="731">
+          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2737">
+          <caret line="172" column="26" selection-start-line="172" selection-start-column="26" selection-end-line="172" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/ItemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcOrderDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/OrderServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcUserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="132" column="55" selection-start-line="132" selection-start-column="55" selection-end-line="132" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/AuthenticationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="46" column="57" lean-forward="true" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="78" selection-start-line="22" selection-start-column="78" selection-end-line="22" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="51" column="35" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="35" />
+          <folding>
+            <element signature="e#2291#2292#0" expanded="true" />
+            <element signature="e#2337#2338#0" expanded="true" />
           </folding>
         </state>
       </provider>

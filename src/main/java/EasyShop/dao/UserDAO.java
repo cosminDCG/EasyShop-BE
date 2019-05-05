@@ -20,4 +20,6 @@ public interface UserDAO {
     void deleteUserById(int user_id);
 
     List<UserDTO> getAllUsers();
+
+    void changePassword(int user_id, String password);
 }

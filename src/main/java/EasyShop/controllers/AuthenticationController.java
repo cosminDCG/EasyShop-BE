@@ -62,6 +62,12 @@ public class AuthenticationController {
         }
     }
 
+    @RequestMapping(value = "/user/password/change", method = RequestMethod.POST)
+    public ResponseEntity changePassword(@RequestParam String email, @RequestParam String password, @RequestParam String newPassword) {
+        Boolean ok = userService.changePassword(email, password, newPassword);
+        return new ResponseEntity(ok, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/user/update", method = RequestMethod.POST)
     public ResponseEntity updateUser (@RequestBody UserDTO userDTO){
         Boolean ok = userService.updateUser(userDTO);

@@ -53,6 +53,18 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         } else return userDTO;
     }
 
+    public Boolean changePassword(String email, String password, String newPassword){
+
+        UserDTO userDTO = userDAO.getUserByEmail(email);
+        if (!passwordEncoder.matches(password, userDTO.getPassword())){
+            return false;
+        } else{
+            newPassword = passwordEncoder.encode(newPassword);
+            userDAO.changePassword(userDTO.getId(), newPassword);
+            return true;
+        }
+    }
+
     public Boolean updateUser(UserDTO userDTO){
 
         userDAO.updateUser(userDTO);

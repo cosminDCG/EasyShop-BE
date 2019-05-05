@@ -19,4 +19,6 @@ public interface UserService {
     Boolean deleteUserById(int user_id);
 
     List<UserDTO> getAllUsers();
+
+    Boolean changePassword(String email, String password, String newPassword);
 }

@@ -120,6 +120,20 @@ public class JdbcUserDAO implements UserDAO {
     }
 
     @Override
+    public void changePassword(int user_id, String password){
+        String sqlUpdate = "" +
+                "UPDATE user " +
+                "SET password = :password "+
+                "WHERE user_id = :id";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("password", password);
+        namedParameters.addValue("id", user_id);
+
+        jdbcTemplate.update(sqlUpdate,namedParameters);
+    }
+
+    @Override
     public void insertProfilePicture(String path, int id) {
 
         String sqlUpdate = "" +
