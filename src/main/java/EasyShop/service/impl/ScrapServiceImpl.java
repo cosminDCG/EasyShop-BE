@@ -45,7 +45,7 @@ public class ScrapServiceImpl implements ScrapService {
     public void saveImageFromUrl(String imageUrl, int imageName) throws IOException{
         URL url = new URL(imageUrl);
         InputStream is = url.openStream();
-        OutputStream os = new FileOutputStream(DASHBOARD_FOLDER + "/" + imageName + ".jpg");
+        OutputStream os = new FileOutputStream(DASHBOARD_FOLDER + "/item" + imageName + ".jpg");
 
         byte[] b = new byte[2048];
         int length;
@@ -109,7 +109,7 @@ public class ScrapServiceImpl implements ScrapService {
                 newItem.setCategory(category);
                 newItem.setPrice(priceToSave);
                 newItem.setShop(shop);
-                newItem.setPhoto(Integer.toString(imageCount) + ".jpg");
+                newItem.setPhoto("item" + Integer.toString(imageCount) + ".jpg");
                 newItem.setProperties(newItemProperties);
                 itemDTOList.add(newItem);
                 saveImageFromUrl(photo, imageCount);
@@ -197,7 +197,7 @@ public class ScrapServiceImpl implements ScrapService {
             newItem.setCategory(category);
             newItem.setPrice(price);
             newItem.setShop(shop);
-            newItem.setPhoto(Integer.toString(imageCount) + ".jpg");
+            newItem.setPhoto("item" + Integer.toString(imageCount) + ".jpg");
             newItem.setProperties(newItemProperties);
             itemDTOList.add(newItem);
             try {

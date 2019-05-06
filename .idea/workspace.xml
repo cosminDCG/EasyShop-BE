@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25bfd7ec-0692-4b0d-ba24-f68f5e117596" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/ScrapDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcScrapDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2019.05.05.21.14.00__createTableScrap.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/ItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/ItemPropertiesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/ItemPropertiesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemPropertiesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemPropertiesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/ItemPropertiesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/ItemPropertiesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/ScrapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/ScrapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemPropertiesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemPropertiesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ScrapServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ScrapServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/service/impl/ItemServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -157,6 +143,7 @@
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.48" value="1" />
@@ -164,30 +151,30 @@
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.61" value="1" />
           <entry key="project.open.time.71" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="85" />
+          <entry key="java" value="86" />
           <entry key="sql" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="85" />
+          <entry key="JAVA" value="86" />
           <entry key="SQL" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6704" />
+          <entry key="java" value="6739" />
           <entry key="sql" value="119" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6704" />
+          <entry key="JAVA" value="6739" />
           <entry key="SQL" value="119" />
         </counts>
       </usages-collector>
@@ -195,15 +182,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="253" column="58" selection-start-line="248" selection-start-column="8" selection-end-line="253" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/ItemService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -216,12 +194,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
+            <state relative-caret-position="986">
               <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
-              <folding>
-                <element signature="e#1960#1961#0" expanded="true" />
-                <element signature="e#1982#1983#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -238,7 +212,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemPropertiesDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
+            <state relative-caret-position="1122">
               <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
             </state>
           </provider>
@@ -253,15 +227,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemPropertiesServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
               <folding>
                 <element signature="e#782#783#0" expanded="true" />
-                <element signature="e#814#815#0" expanded="true" />
+                <element signature="e#836#837#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ScrapServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -269,8 +252,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcScrapDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="31" column="60" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="56" />
+            <state relative-caret-position="391">
+              <caret line="31" column="56" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -281,8 +264,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="36" column="42" lean-forward="true" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+            <state relative-caret-position="323">
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -365,7 +348,6 @@
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/ScrapDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcScrapDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/ScrapService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ScrapServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/ItemDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemDAO.java" />
@@ -375,6 +357,7 @@
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemPropertiesDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/ItemPropertiesService.java" />
         <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemPropertiesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ScrapServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -435,8 +418,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -554,6 +535,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -563,7 +546,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557087687515" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557088220427" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -703,7 +686,7 @@
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2536913" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25771812" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -713,11 +696,11 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32885906" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.25503355" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.25503355" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32885906" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32885906" />
@@ -830,9 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -938,9 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="78" selection-start-line="22" selection-start-column="78" selection-end-line="22" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -962,10 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="67" column="41" lean-forward="true" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
-          <folding>
-            <element signature="e#2291#2292#0" expanded="true" />
-            <element signature="e#2337#2338#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -994,9 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
           <caret line="132" column="55" selection-start-line="132" selection-start-column="55" selection-end-line="132" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1028,23 +998,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ScrapServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4114">
+          <caret line="253" column="58" selection-start-line="248" selection-start-column="8" selection-end-line="253" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/ItemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/ItemPropertiesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemPropertiesDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/ItemPropertiesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcScrapDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="223" column="38" selection-start-line="223" selection-start-column="38" selection-end-line="223" selection-end-column="38" />
+          <caret line="31" column="56" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="56" />
           <folding>
-            <element signature="e#9317#9318#0" expanded="true" />
-            <element signature="e#9334#9335#0" expanded="true" />
-            <element signature="e#9400#9401#0" expanded="true" />
-            <element signature="e#9430#9431#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="36" column="42" lean-forward="true" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+        <state relative-caret-position="323">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1058,70 +1067,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcScrapDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="31" column="60" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/ItemService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="73" column="32" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
-          <folding>
-            <element signature="e#1960#1961#0" expanded="true" />
-            <element signature="e#1982#1983#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/ItemPropertiesDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="253" column="58" selection-start-line="248" selection-start-column="8" selection-end-line="253" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcItemPropertiesDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/ItemPropertiesService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemPropertiesServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
           <folding>
             <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#814#815#0" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ScrapServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
         </state>
       </provider>
     </entry>
