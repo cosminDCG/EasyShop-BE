@@ -26,7 +26,7 @@ public class WishlistController {
         Boolean ok = wishlistService.insertWishItem(wishlistDTO);
         if (ok == true)
             return new ResponseEntity(ok, HttpStatus.OK);
-        else return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
+        else return new ResponseEntity(false, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/wishlist/item", method = RequestMethod.GET)

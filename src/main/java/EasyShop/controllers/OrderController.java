@@ -49,13 +49,14 @@ public class OrderController {
     public ResponseEntity insertCartMultiple(@RequestParam int user_id, @RequestBody List<ItemDTO> itemDTOList){
 
         Boolean ok = true;
+        int count = 0;
         for(ItemDTO itemDTO : itemDTOList){
             ok = orderService.insertCart(user_id, itemDTO.getId(), itemDTO.getQuantity());
-            if(ok == false)
-                return new ResponseEntity(false, HttpStatus.OK);
+            if(ok == true)
+                count ++;
         }
 
-        return new ResponseEntity(ok, HttpStatus.OK);
+        return new ResponseEntity(count, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/order/cart/items", method = RequestMethod.GET)

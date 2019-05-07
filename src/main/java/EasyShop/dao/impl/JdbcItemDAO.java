@@ -166,10 +166,11 @@ public class JdbcItemDAO implements ItemDAO {
     @Override
     public ItemDTO getCheapestChoice(String criteria){
         String sqlSelect = "" +
-                "SELECT *, match(name) against(:criteria) as relevance " +
+                "SELECT *, match(name) against(:criteria) as relevance, " +
+                " CAST(REPLACE(REPLACE(SUBSTRING_INDEX(price, 'Lei', 1),'.',''),',','.') AS DECIMAL(10,2)) AS order_price " +
                 "FROM items " +
                 "WHERE match(name) against(:criteria) " +
-                "ORDER BY relevance desc, price asc " +
+                "ORDER BY relevance desc, order_price asc " +
                 "LIMIT 1";
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
@@ -216,11 +217,12 @@ public class JdbcItemDAO implements ItemDAO {
     @Override
     public ItemDTO getCheapestSinglePlace(String criteria, String place){
         String sqlSelect = "" +
-                "SELECT *, match(name) against(:criteria) as relevance " +
+                "SELECT *, match(name) against(:criteria) as relevance, " +
+                " CAST(REPLACE(REPLACE(SUBSTRING_INDEX(price, 'Lei', 1),'.',''),',','.')AS DECIMAL(10,2)) AS order_price " +
                 "FROM items " +
                 "WHERE match(name) against(:criteria) " +
                 "AND shop = :place " +
-                "ORDER BY relevance desc, price asc " +
+                "ORDER BY relevance desc, order_price asc " +
                 "LIMIT 1";
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();

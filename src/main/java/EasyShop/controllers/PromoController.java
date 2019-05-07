@@ -1,6 +1,7 @@
 package EasyShop.controllers;
 
 import EasyShop.dto.PromoDTO;
+import EasyShop.service.EmailService;
 import EasyShop.service.PromoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,9 @@ public class PromoController {
 
     @Autowired
     private PromoService promoService;
+
+    @Autowired
+    private EmailService emailService;
 
     @RequestMapping(value = "/promo/verify", method = RequestMethod.GET)
     public ResponseEntity verifyPromoAndGetPercent(@RequestParam int userId, @RequestParam String promoCode){
@@ -53,8 +57,10 @@ public class PromoController {
     @RequestMapping(value = "/promo/custom", method = RequestMethod.POST)
     public ResponseEntity setCustomPromo(@RequestBody PromoDTO promoDTO) {
         Boolean ok = promoService.setCustomPromo(promoDTO);
-        if(ok == true)
+        if(ok == true){
+            emailService.sendPromoMessage(promoDTO);
             return new ResponseEntity(ok, HttpStatus.OK);
+        }
         else return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
     }
 }

@@ -99,12 +99,12 @@ public class JdbcUserDAO implements UserDAO {
 
         String sqlUpdate = "" +
                 "UPDATE user " +
-                "SET first_name = :firstName, "+
-                " last_name = :lastName, "+
-                " email = :email, "+
-                " address = :address, "+
-                " city = :city, "+
-                " phone_number = :phoneNumber "+
+                "SET first_name = :firstName, " +
+                " last_name = :lastName, " +
+                " email = :email, " +
+                " address = :address, " +
+                " city = :city, " +
+                " phone_number = :phoneNumber " +
                 "WHERE user_id = :id";
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();

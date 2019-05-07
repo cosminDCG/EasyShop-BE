@@ -16,4 +16,12 @@ public class BanServiceImpl implements BanService {
         banDAO.addBan(banDTO);
         return true;
     }
+
+    public BanDTO getActiveBanByUserId(int user_id){
+        return banDAO.getActiveBanByUserId(user_id);
+    }
+
+    public void updateBanDate(int ban_id, int days, String reason){
+        banDAO.updateBanDate(ban_id, days, reason);
+    }
 }

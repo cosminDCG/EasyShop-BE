@@ -91,6 +91,28 @@ public class JdbcWishlistDAO implements WishlistDAO {
         jdbcTemplate.update(sqlDelete, namedParameters);
     }
 
+    @Override
+    public int getWishIdByItemId(int item_id){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    wish_id " +
+                " FROM wishlist" +
+                " where item_id = :item_id ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("item_id", item_id);
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            int results = 0;
+            while(rs.next()) {
+                results = rs.getInt("wish_id");
+            }
+            return results;
+
+        });
+    }
+
     class WishlistDTOMapper implements RowMapper<WishlistDTO> {
         @Override
         public WishlistDTO mapRow(ResultSet rs, int rowNum) throws SQLException {

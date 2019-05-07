@@ -17,6 +17,9 @@ public class WishlistServiceImpl implements WishlistService {
     WishlistDAO wishlistDAO;
 
     public Boolean insertWishItem(WishlistDTO wishlistDTO){
+        int check = wishlistDAO.getWishIdByItemId((wishlistDTO.getItemId()));
+        if(check != 0)
+            return false;
         wishlistDAO.insertWishItem(wishlistDTO);
         return true;
     }

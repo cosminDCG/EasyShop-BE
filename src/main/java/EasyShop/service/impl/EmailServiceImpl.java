@@ -1,5 +1,8 @@
 package EasyShop.service.impl;
 
+import EasyShop.dao.UserDAO;
+import EasyShop.dto.BanDTO;
+import EasyShop.dto.PromoDTO;
 import EasyShop.dto.UserDTO;
 import EasyShop.service.EmailService;
 import net.sf.jasperreports.engine.JRException;
@@ -23,6 +26,9 @@ public class EmailServiceImpl implements EmailService {
     @Autowired
     public JavaMailSender emailSender;
 
+    @Autowired
+    public UserDAO userDAO;
+
     public void sendSimpleMessage( UserDTO userDTO) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(userDTO.getEmail());
@@ -31,6 +37,43 @@ public class EmailServiceImpl implements EmailService {
                         "You can connect using your email address: " + userDTO.getEmail() + ".\n " +
                         "Follow this link: http://localhost:4200/authentication to login!\n " +
                         "Have a nice day!\n Easy Shop Team");
+        emailSender.send(message);
+    }
+
+    public void sendBanMessage(BanDTO banDTO){
+
+        UserDTO bannedBy = userDAO.getUserById(banDTO.getBannedBy());
+        UserDTO bannedUser = userDAO.getUserById(banDTO.getBannedUser());
+
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(bannedUser.getEmail());
+        message.setSubject("Ban on Easy Shop!");
+        message.setText("Hello, " + bannedUser.getFirstName() + " " + bannedUser.getLastName() + "!\n\n " +
+                        "Unfortunately, you were banned by " + bannedBy.getFirstName() + " " + bannedUser.getLastName() + ".\n " +
+                        "From this day until the end day of your ban you won't be able to use Easy Shop.\n " +
+                        "Reason: " + banDTO.getReason() + "\n " +
+                        "End Date of the ban: " + banDTO.getEndDate() + "\n " +
+                        "For any qustion, send a mail to easyshopcontact01@gmail.com and one of our admins will reply you as soon as possible!\n \n" +
+                        "Have a nice day!\n Easy Shop Team");
+
+        emailSender.send(message);
+    }
+
+    public void sendPromoMessage(PromoDTO promoDTO){
+
+        UserDTO userDTO = userDAO.getUserById(promoDTO.getUserId());
+
+        SimpleMailMessage message = new SimpleMailMessage();
+
+        message.setTo(userDTO.getEmail());
+        message.setSubject("Promo code on Easy Shop!");
+        message.setText("Hello, " + userDTO.getFirstName() + " " + userDTO.getLastName() + "!\n \n " +
+                        "You just received a promo code on Easy Shop!\n" +
+                        "It's value is " + promoDTO.getPromoPercent() + "% and you can use it whenever you want.\n " +
+                        "Promo Code: " + promoDTO.getPromoCode() + "\n " +
+                        "You can also see it in the promo section on your profile.\n \n " +
+                        "Have a nice day!\n Easy Shop Team");
+
         emailSender.send(message);
     }
 }

@@ -13,4 +13,6 @@ public interface WishlistDAO {
     List<WishItemDTO> getWishItemsForUser(int user_id);
 
     void deleteWishItem(int wish_id);
+
+    int getWishIdByItemId(int item_id);
 }
