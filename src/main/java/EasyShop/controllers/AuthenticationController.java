@@ -2,6 +2,7 @@ package EasyShop.controllers;
 
 import EasyShop.dto.UserDTO;
 import EasyShop.service.EmailService;
+import EasyShop.service.ReviewService;
 import EasyShop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,6 +37,9 @@ public class AuthenticationController {
 
     @Autowired
     private EmailService emailService;
+
+    @Autowired
+    private ReviewService reviewService;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ResponseEntity registerUser(@RequestBody UserDTO userDTO){
@@ -88,6 +92,10 @@ public class AuthenticationController {
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public ResponseEntity getUserById(@RequestParam int id){
         UserDTO userDTO = userService.getUserById(id);
+
+        userDTO.setRevNo(reviewService.getNoOfReviewsById(userDTO.getId()));
+        userDTO.setCommNo(reviewService.getNoOfCommentsById(userDTO.getId()));
+
         if(userDTO == null)
             return new ResponseEntity(null, HttpStatus.BAD_REQUEST);
         else return new ResponseEntity(userDTO, HttpStatus.OK);

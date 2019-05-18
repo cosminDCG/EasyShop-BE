@@ -13,4 +13,8 @@ public interface ReviewDAO {
     List<ReviewDTO> getReviewsByItemId(int id);
 
     void deleteReviewById(int review_id);
+
+    int getNoOfReviewsById(int user_id);
+
+    int getNoOfCommentsById(int user_id);
 }

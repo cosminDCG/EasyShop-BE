@@ -1,5 +1,6 @@
 package EasyShop.service.impl;
 
+import EasyShop.dao.ReviewDAO;
 import EasyShop.dao.UserDAO;
 import EasyShop.dto.OrderDTO;
 import EasyShop.dto.UserDTO;
@@ -31,6 +32,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private ReviewDAO reviewDAO;
+
     public Boolean registerUser(UserDTO userDTO) {
 
         UserDTO check = userDAO.getUserByEmail(userDTO.getEmail());
@@ -46,6 +50,10 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public UserDTO login (String email, String password) {
 
         UserDTO userDTO = userDAO.getUserByEmail(email);
+
+        userDTO.setRevNo(reviewDAO.getNoOfReviewsById(userDTO.getId()));
+        userDTO.setCommNo(reviewDAO.getNoOfCommentsById(userDTO.getId()));
+
         if (userDTO == null) {
             return null;
         } else if (!passwordEncoder.matches(password, userDTO.getPassword())){
@@ -91,6 +99,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
         for(UserDTO userDTO : userDTOList){
             userDTO.setOrders(orderService.getOrdersByUserId(userDTO.getId()));
+
+            userDTO.setRevNo(reviewDAO.getNoOfReviewsById(userDTO.getId()));
+            userDTO.setCommNo(reviewDAO.getNoOfCommentsById(userDTO.getId()));
             
             for(OrderDTO orderDTO : userDTO.getOrders()){
                 orderDTO.setItems(orderService.getOrderItemsByOrderId(orderDTO.getId()));

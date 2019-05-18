@@ -17,6 +17,8 @@ public class UserDTO {
     private String role;
     private Date joinDate;
     private List<OrderDTO> orders;
+    private int revNo;
+    private int commNo;
 
     public UserDTO() {}
 
@@ -125,5 +127,21 @@ public class UserDTO {
 
     public void setOrders(List<OrderDTO> orders) {
         this.orders = orders;
+    }
+
+    public int getRevNo() {
+        return revNo;
+    }
+
+    public void setRevNo(int revNo) {
+        this.revNo = revNo;
+    }
+
+    public int getCommNo() {
+        return commNo;
+    }
+
+    public void setCommNo(int commNo) {
+        this.commNo = commNo;
     }
 }

@@ -29,4 +29,12 @@ public class ReviewServiceImpl implements ReviewService {
         reviewDAO.deleteReviewById(review_id);
         return true;
     }
+
+    public int getNoOfReviewsById(int user_id){
+        return reviewDAO.getNoOfReviewsById(user_id);
+    }
+
+    public int getNoOfCommentsById(int user_id){
+        return reviewDAO.getNoOfCommentsById(user_id);
+    }
 }

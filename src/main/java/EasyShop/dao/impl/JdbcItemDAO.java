@@ -147,7 +147,8 @@ public class JdbcItemDAO implements ItemDAO {
         String sqlSelect = "" +
                 "SELECT " +
                 "    distinct(category) " +
-                "FROM items ";
+                "FROM items " +
+                "ORDER BY category";
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
 

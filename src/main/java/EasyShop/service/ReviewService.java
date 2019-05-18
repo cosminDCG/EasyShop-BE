@@ -11,4 +11,8 @@ public interface ReviewService {
     List<ReviewDTO> getReviewsByItemId(int id);
 
     Boolean deleteReviewById(int review_id);
+
+    int getNoOfReviewsById(int user_id);
+
+    int getNoOfCommentsById(int user_id);
 }

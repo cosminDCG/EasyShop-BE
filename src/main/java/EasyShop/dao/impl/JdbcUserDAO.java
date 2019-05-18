@@ -55,7 +55,6 @@ public class JdbcUserDAO implements UserDAO {
                 "SELECT " +
                 "    * " +
                 "FROM user " +
-                "LEFT JOIN ban ON  user.user_id = ban.banned_user  " +
                 "WHERE user.email = :email ";
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();

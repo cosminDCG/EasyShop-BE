@@ -137,4 +137,50 @@ public class JdbcReviewDAO implements ReviewDAO {
         jdbcTemplate.update(sqlDeleteReview, namedParameters);
         jdbcTemplate.update(sqlDeleteReplies, namedParameters);
     }
+
+    @Override
+    public int getNoOfReviewsById(int user_id){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    COUNT(review_id) as revs " +
+                "FROM review " +
+                "WHERE reply_to = 0 " +
+                "AND user_id = :user_id ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("user_id", user_id);
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            int results = 0;
+            while(rs.next()) {
+                results = rs.getInt("revs");
+            }
+            return results;
+
+        });
+    }
+
+    @Override
+    public int getNoOfCommentsById(int user_id){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    COUNT(review_id) as comms " +
+                "FROM review " +
+                "WHERE reply_to <> 0 " +
+                "AND user_id = :user_id ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("user_id", user_id);
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            int results = 0;
+            while(rs.next()) {
+                results = rs.getInt("comms");
+            }
+            return results;
+
+        });
+    }
 }
