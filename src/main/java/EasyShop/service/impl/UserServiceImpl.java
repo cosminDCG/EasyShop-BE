@@ -110,6 +110,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return userDTOList;
     }
 
+    public Boolean updateRole(int user_id, String role){
+        userDAO.updateUserRole(user_id, role);
+        return true;
+    }
+
     @Override
     public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {

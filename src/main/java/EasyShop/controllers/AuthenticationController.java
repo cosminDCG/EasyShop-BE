@@ -2,6 +2,7 @@ package EasyShop.controllers;
 
 import EasyShop.dto.UserDTO;
 import EasyShop.service.EmailService;
+import EasyShop.service.RepService;
 import EasyShop.service.ReviewService;
 import EasyShop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,9 @@ public class AuthenticationController {
 
     @Autowired
     private ReviewService reviewService;
+
+    @Autowired
+    private RepService repService;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ResponseEntity registerUser(@RequestBody UserDTO userDTO){
@@ -114,6 +118,24 @@ public class AuthenticationController {
         List<UserDTO> userDTOList = userService.getAllUsers();
         if (userDTOList != null)
             return new ResponseEntity(userDTOList, HttpStatus.OK);
+        else return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
+    }
+
+    @RequestMapping(value = "/user/role/update", method = RequestMethod.POST)
+    public ResponseEntity updateUserRole(@RequestParam int id, @RequestParam String role){
+        Boolean ok = userService.updateRole(id, role);
+        if(ok == true)
+            return new ResponseEntity(ok, HttpStatus.OK);
+        else return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
+    }
+
+    @RequestMapping(value = "/user/rep/update", method = RequestMethod.POST)
+    public ResponseEntity updateUserToRep(@RequestParam int id, @RequestParam String role, @RequestParam String shop){
+        Boolean ok = userService.updateRole(id, role);
+        if(ok == true){
+            repService.insertRep(id, shop);
+            return new ResponseEntity(ok, HttpStatus.OK);
+        }
         else return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
     }
 

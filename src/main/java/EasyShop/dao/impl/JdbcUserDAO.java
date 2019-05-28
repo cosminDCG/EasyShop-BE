@@ -137,7 +137,7 @@ public class JdbcUserDAO implements UserDAO {
 
         String sqlUpdate = "" +
                 "UPDATE user " +
-                "SET photo = :photo "+
+                "SET photo = :photo " +
                 "WHERE user_id = :id";
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
@@ -191,6 +191,20 @@ public class JdbcUserDAO implements UserDAO {
 
         });
 
+    }
+
+    @Override
+    public void updateUserRole(int user_id, String role){
+        String sqlUpdate = "" +
+                "UPDATE user " +
+                "SET role = :role "+
+                "WHERE user_id = :id";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("id", user_id);
+        namedParameters.addValue("role", role);
+
+        jdbcTemplate.update(sqlUpdate, namedParameters);
     }
 
     class UserDTOMapper implements RowMapper<UserDTO> {

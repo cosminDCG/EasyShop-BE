@@ -21,4 +21,6 @@ public interface UserService {
     List<UserDTO> getAllUsers();
 
     Boolean changePassword(String email, String password, String newPassword);
+
+    Boolean updateRole(int user_id, String role);
 }
