@@ -100,11 +100,17 @@ public class OrderController {
         else return new ResponseEntity(null, HttpStatus.BAD_REQUEST);
     }
 
-    @RequestMapping(value = "order/items", method = RequestMethod.GET)
+    @RequestMapping(value = "/order/items", method = RequestMethod.GET)
     public ResponseEntity getOrderItemsByOrderId(@RequestParam int order_id){
         List<ItemDTO> itemDTOList = orderService.getOrderItemsByOrderId(order_id);
         if(itemDTOList.size() != 0)
             return new ResponseEntity(itemDTOList, HttpStatus.OK);
         else return new ResponseEntity(null, HttpStatus.BAD_REQUEST);
+    }
+
+    @RequestMapping(value = "/order/all", method = RequestMethod.GET)
+    public ResponseEntity getAllOrders(){
+        List<OrderDTO> orderDTOList = orderService.getAllOrders();
+        return new ResponseEntity(orderDTOList, HttpStatus.OK);
     }
 }

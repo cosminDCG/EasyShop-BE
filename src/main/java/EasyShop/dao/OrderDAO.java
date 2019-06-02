@@ -31,4 +31,6 @@ public interface OrderDAO {
     int getQuantityByCartId(int cart_id);
 
     void addQuantityToItem(int cart_id, int quantity);
+
+    List<OrderDTO> getAllOrders();
 }

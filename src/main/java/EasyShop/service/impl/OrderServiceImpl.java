@@ -65,4 +65,8 @@ public class OrderServiceImpl implements OrderService {
     public int checkIfItemExistsInCart(int item_id, int order_id) {
         return orderDAO.checkIfItemExistsInCart(item_id, order_id);
     }
+
+    public List<OrderDTO> getAllOrders(){
+        return orderDAO.getAllOrders();
+    }
 }

@@ -1,5 +1,6 @@
 package EasyShop.service.impl;
 
+import EasyShop.dao.RepDAO;
 import EasyShop.dao.ReviewDAO;
 import EasyShop.dao.UserDAO;
 import EasyShop.dto.OrderDTO;
@@ -35,6 +36,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Autowired
     private ReviewDAO reviewDAO;
 
+    @Autowired
+    private RepDAO repDAO;
+
     public Boolean registerUser(UserDTO userDTO) {
 
         UserDTO check = userDAO.getUserByEmail(userDTO.getEmail());
@@ -53,6 +57,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
         userDTO.setRevNo(reviewDAO.getNoOfReviewsById(userDTO.getId()));
         userDTO.setCommNo(reviewDAO.getNoOfCommentsById(userDTO.getId()));
+        userDTO.setShop(repDAO.getShopByRepId(userDTO.getId()));
 
         if (userDTO == null) {
             return null;
@@ -102,6 +107,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
             userDTO.setRevNo(reviewDAO.getNoOfReviewsById(userDTO.getId()));
             userDTO.setCommNo(reviewDAO.getNoOfCommentsById(userDTO.getId()));
+
+            userDTO.setShop(repDAO.getShopByRepId(userDTO.getId()));
             
             for(OrderDTO orderDTO : userDTO.getOrders()){
                 orderDTO.setItems(orderService.getOrderItemsByOrderId(orderDTO.getId()));

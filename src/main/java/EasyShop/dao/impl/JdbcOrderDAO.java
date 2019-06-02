@@ -336,4 +336,38 @@ public class JdbcOrderDAO implements OrderDAO {
         });
 
     }
+
+    @Override
+    public List<OrderDTO> getAllOrders(){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    *  " +
+                "FROM orders " +
+                "WHERE state = 'complete' ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            List<OrderDTO> results = new ArrayList<>();
+            while(rs.next()) {
+                OrderDTO orderDTO = new OrderDTO();
+                orderDTO.setId(rs.getInt("order_id"));
+                orderDTO.setUserId(rs.getInt("user_id"));
+                orderDTO.setPrice(rs.getFloat("price"));
+                orderDTO.setState(rs.getString("state"));
+                orderDTO.setDeliveryPerson(rs.getString("delivery_person"));
+                orderDTO.setDeliveryAddress(rs.getString("delivery_address"));
+                orderDTO.setBillingPerson(rs.getString("billing_person"));
+                orderDTO.setBillingAddress(rs.getString("billing_address"));
+                orderDTO.setCashPay(rs.getString("cash_pay"));
+                orderDTO.setData(rs.getDate("data"));
+                orderDTO.setItems(getOrderItemsByOrderId(orderDTO.getId()));
+
+                results.add(orderDTO);
+            }
+            return results;
+
+        });
+    }
 }

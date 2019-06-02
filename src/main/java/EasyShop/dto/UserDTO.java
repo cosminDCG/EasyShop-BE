@@ -19,6 +19,7 @@ public class UserDTO {
     private List<OrderDTO> orders;
     private int revNo;
     private int commNo;
+    private String shop;
 
     public UserDTO() {}
 
@@ -143,5 +144,13 @@ public class UserDTO {
 
     public void setCommNo(int commNo) {
         this.commNo = commNo;
+    }
+
+    public String getShop() {
+        return shop;
+    }
+
+    public void setShop(String shop) {
+        this.shop = shop;
     }
 }

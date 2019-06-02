@@ -25,4 +25,6 @@ public interface OrderService {
     List<ItemDTO> getOrderItemsByOrderId(int order_id);
 
     int checkIfItemExistsInCart(int item_id, int order_id);
+
+    List<OrderDTO> getAllOrders();
 }
