@@ -4,50 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/EasyShop/controllers/ItemController.java" line="25" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25bfd7ec-0692-4b0d-ba24-f68f5e117596" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/ChartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/ChartDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcChartDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dto/chart/OverallDateOrderDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dto/chart/ShopDateOrderDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/ChartService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ChartServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/BillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/BillController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/controllers/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/BillDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/BillDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcBillDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcBillDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcOrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcOrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcUserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/BillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/BillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/ItemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/ItemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/BillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/BillServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/ItemServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EasyShop/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/controllers/AuthenticationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/controllers/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/controllers/OrderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/dao/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/dao/OrderDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/dao/impl/JdbcOrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/dao/impl/JdbcOrderDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/dao/impl/JdbcUserDAO$UserDTOMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/dao/impl/JdbcUserDAO$UserDTOMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/dao/impl/JdbcUserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/dao/impl/JdbcUserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/dto/UserDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/service/ItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/service/ItemService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/service/OrderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/service/impl/ItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/service/impl/ItemServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/service/impl/OrderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EasyShop/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EasyShop/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V2019.06.02.23.49.00__createTableBill.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V2019.06.02.23.49.00__createTableBill.sql" afterDir="false" />
-    </list>
+    <list default="true" id="25bfd7ec-0692-4b0d-ba24-f68f5e117596" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -329,7 +286,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcBillDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="408">
               <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -772,7 +729,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2872483" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -784,11 +740,11 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32885906" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.29932886" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29932886" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32797858" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32751676" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32885906" />
@@ -1177,7 +1133,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/EasyShop/dao/impl/JdbcBillDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="408">
           <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
