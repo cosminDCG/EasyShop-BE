@@ -72,6 +72,11 @@ public class AuthenticationController {
 
     @RequestMapping(value = "/user/password/change", method = RequestMethod.POST)
     public ResponseEntity changePassword(@RequestParam String email, @RequestParam String password, @RequestParam String newPassword) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+        if(currentPrincipalName.equals(email) == false){
+            return new ResponseEntity("No permission", HttpStatus.BAD_REQUEST);
+        }
         Boolean ok = userService.changePassword(email, password, newPassword);
         return new ResponseEntity(ok, HttpStatus.OK);
     }
@@ -79,6 +84,11 @@ public class AuthenticationController {
     @RequestMapping(value = "/user/update", method = RequestMethod.POST)
     public ResponseEntity updateUser (@RequestBody UserDTO userDTO){
         Boolean ok = userService.updateUser(userDTO);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentPrincipalName = authentication.getName();
+        if(currentPrincipalName.equals(userDTO.getEmail()) == false){
+            return new ResponseEntity("No permission", HttpStatus.BAD_REQUEST);
+        }
         if (ok == true){
             return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
         } else return new ResponseEntity(null, HttpStatus.BAD_REQUEST);

@@ -69,4 +69,12 @@ public class OrderServiceImpl implements OrderService {
     public List<OrderDTO> getAllOrders(){
         return orderDAO.getAllOrders();
     }
+
+    public List<OrderDTO> getOrdersFromShop(String shop){
+        return  orderDAO.getOrdersFromShop(shop);
+    }
+
+    public List<OrderDTO> getLastMonthOrdersFromShop(String shop){
+        return orderDAO.getLastMonthOrdersFromShop(shop);
+    }
 }

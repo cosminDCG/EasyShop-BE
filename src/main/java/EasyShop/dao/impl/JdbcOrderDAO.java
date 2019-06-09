@@ -370,4 +370,116 @@ public class JdbcOrderDAO implements OrderDAO {
 
         });
     }
+
+    @Override
+    public List<ItemDTO> getOrderItemsByOrderIdAndShop(int order_id, String shop){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    * " +
+                "FROM items i, orders o, cart c " +
+                "WHERE o.order_id = c.order_id " +
+                "AND c.item_id = i.item_id " +
+                "AND o.order_id =:order_id " +
+                "AND i.shop =:shop";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("order_id", order_id);
+        namedParameters.addValue("shop", shop);
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            List<ItemDTO> results = new ArrayList<>();
+            while(rs.next()) {
+                ItemDTO itemDTO = new ItemDTO();
+                itemDTO.setId(rs.getInt("item_id"));
+                itemDTO.setName(rs.getString("name"));
+                itemDTO.setDescription(rs.getString("description"));
+                itemDTO.setCategory(rs.getString("category"));
+                itemDTO.setPrice(rs.getString("price"));
+                itemDTO.setShop(rs.getString("shop"));
+                itemDTO.setPhoto(rs.getString("photo"));
+                itemDTO.setQuantity(rs.getInt("c.quantity"));
+                itemDTO.setCartId(rs.getInt("c.cart_id"));
+
+                results.add(itemDTO);
+            }
+            return results;
+
+        });
+    }
+
+    @Override
+    public List<OrderDTO> getOrdersFromShop(String shop){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    *  " +
+                "FROM orders " +
+                "WHERE state = 'complete' ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            List<OrderDTO> results = new ArrayList<>();
+            while(rs.next()) {
+                OrderDTO orderDTO = new OrderDTO();
+                orderDTO.setId(rs.getInt("order_id"));
+                orderDTO.setUserId(rs.getInt("user_id"));
+                orderDTO.setPrice(rs.getFloat("price"));
+                orderDTO.setState(rs.getString("state"));
+                orderDTO.setDeliveryPerson(rs.getString("delivery_person"));
+                orderDTO.setDeliveryAddress(rs.getString("delivery_address"));
+                orderDTO.setBillingPerson(rs.getString("billing_person"));
+                orderDTO.setBillingAddress(rs.getString("billing_address"));
+                orderDTO.setCashPay(rs.getString("cash_pay"));
+                orderDTO.setData(rs.getDate("data"));
+                orderDTO.setItems(getOrderItemsByOrderIdAndShop(orderDTO.getId(), shop));
+
+                if(orderDTO.getItems().size() != 0){
+                    results.add(orderDTO);
+                }
+
+            }
+            return results;
+
+        });
+    }
+
+    @Override       
+    public List<OrderDTO> getLastMonthOrdersFromShop(String shop){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    *  " +
+                " FROM orders " +
+                " WHERE state = 'complete' " +
+                " AND data BETWEEN DATE_SUB(NOW(), INTERVAL 30 DAY) AND NOW() ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            List<OrderDTO> results = new ArrayList<>();
+            while(rs.next()) {
+                OrderDTO orderDTO = new OrderDTO();
+                orderDTO.setId(rs.getInt("order_id"));
+                orderDTO.setUserId(rs.getInt("user_id"));
+                orderDTO.setPrice(rs.getFloat("price"));
+                orderDTO.setState(rs.getString("state"));
+                orderDTO.setDeliveryPerson(rs.getString("delivery_person"));
+                orderDTO.setDeliveryAddress(rs.getString("delivery_address"));
+                orderDTO.setBillingPerson(rs.getString("billing_person"));
+                orderDTO.setBillingAddress(rs.getString("billing_address"));
+                orderDTO.setCashPay(rs.getString("cash_pay"));
+                orderDTO.setData(rs.getDate("data"));
+                orderDTO.setItems(getOrderItemsByOrderIdAndShop(orderDTO.getId(), shop));
+
+                if(orderDTO.getItems().size() != 0){
+                    results.add(orderDTO);
+                }
+
+            }
+            return results;
+
+        });
+    }
 }

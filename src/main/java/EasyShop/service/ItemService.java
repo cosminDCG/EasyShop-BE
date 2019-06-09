@@ -22,6 +22,8 @@ public interface ItemService {
 
     Float getTotalPriceFromList(List<ItemDTO> itemDTOList);
 
+    Float getTotalPriceFromCartList(List<ItemDTO> itemDTOList);
+
     int countFoundItems(List<ItemDTO> itemDTOList);
 
     void truncateItems();

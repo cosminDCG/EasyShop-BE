@@ -12,5 +12,5 @@ public interface BillDAO {
 
     List<BillDTO> getBillsByShop(String shop);
 
-    void payBill(String payedBy);
+    void payBill(String payedBy, int billId);
 }

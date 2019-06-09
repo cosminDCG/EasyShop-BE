@@ -26,7 +26,9 @@ public class BillServiceImpl implements BillService {
         return billDAO.getBillsByShop(shop);
     }
 
-    public void payBill(String payedBy){
-        billDAO.payBill(payedBy);
+    public Boolean payBill(String payedBy, int billId){
+
+        billDAO.payBill(payedBy, billId);
+        return true;
     }
 }

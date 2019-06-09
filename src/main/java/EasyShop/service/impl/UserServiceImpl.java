@@ -122,6 +122,14 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return true;
     }
 
+    public List<UserDTO> getAllReps(){
+        List<UserDTO> userDTOList = userDAO.getAllReps();
+        for (UserDTO userDTO : userDTOList){
+            userDTO.setShop(repDAO.getShopByRepId(userDTO.getId()));
+        }
+        return userDTOList;
+    }
+
     @Override
     public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {

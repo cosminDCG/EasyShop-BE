@@ -24,4 +24,6 @@ public interface UserDAO {
     void changePassword(int user_id, String password);
 
     void updateUserRole(int user_id, String role);
+
+    List<UserDTO> getAllReps();
 }

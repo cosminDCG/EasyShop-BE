@@ -207,6 +207,39 @@ public class JdbcUserDAO implements UserDAO {
         jdbcTemplate.update(sqlUpdate, namedParameters);
     }
 
+    @Override
+    public List<UserDTO> getAllReps(){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    * " +
+                "FROM user " +
+                "WHERE role = 'rep' ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+
+        return jdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            List<UserDTO> results = new ArrayList<>();
+            while(rs.next()) {
+                UserDTO userDTO = new UserDTO();
+                userDTO.setId(rs.getInt("user_id"));
+                userDTO.setEmail(rs.getString("email"));
+                userDTO.setFirstName(rs.getString("first_name"));
+                userDTO.setLastName(rs.getString("last_name"));
+                userDTO.setPassword(rs.getString("password"));
+                userDTO.setAddress(rs.getString("address"));
+                userDTO.setCity(rs.getString("city"));
+                userDTO.setPhoneNumber(rs.getString("phone_number"));
+                userDTO.setPhoto(rs.getString("photo"));
+                userDTO.setRole(rs.getString("role"));
+                userDTO.setJoinDate(rs.getDate("join_date"));
+                results.add(userDTO);
+            }
+            return results;
+
+        });
+    }
+
     class UserDTOMapper implements RowMapper<UserDTO> {
         @Override
         public UserDTO mapRow(ResultSet rs, int rowNum) throws SQLException {

@@ -98,15 +98,17 @@ public class JdbcBillDAO implements BillDAO {
     }
 
     @Override
-    public void payBill(String payedBy){
+    public void payBill(String payedBy, int billId){
         String sqlUpdate = "" +
                 "UPDATE bill " +
                 "SET payed = 1, " +
-                " payed_by =:payed_by" +
-                " pay_date = SYSDATE() ";
+                " payed_by =:payed_by, " +
+                " pay_date = SYSDATE() " +
+                "WHERE bill_id =:billId";
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
         namedParameters.addValue("payed_by", payedBy);
+        namedParameters.addValue("billId", billId);
 
         jdbcTemplate.update(sqlUpdate, namedParameters);
     }

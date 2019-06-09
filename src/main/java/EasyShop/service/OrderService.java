@@ -27,4 +27,8 @@ public interface OrderService {
     int checkIfItemExistsInCart(int item_id, int order_id);
 
     List<OrderDTO> getAllOrders();
+
+    List<OrderDTO> getOrdersFromShop(String shop);
+
+    List<OrderDTO> getLastMonthOrdersFromShop(String shop);
 }

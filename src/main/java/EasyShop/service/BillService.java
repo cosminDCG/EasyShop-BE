@@ -12,5 +12,5 @@ public interface BillService {
 
     List<BillDTO> getBillsByShop(String shop);
 
-    void payBill(String payedBy);
+    Boolean payBill(String payedBy, int billId);
 }

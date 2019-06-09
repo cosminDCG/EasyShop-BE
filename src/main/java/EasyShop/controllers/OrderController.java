@@ -4,6 +4,7 @@ import EasyShop.dto.CartDTO;
 import EasyShop.dto.ItemDTO;
 import EasyShop.dto.OrderDTO;
 import EasyShop.dto.PromoDTO;
+import EasyShop.service.ItemService;
 import EasyShop.service.OrderService;
 import EasyShop.service.PromoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,9 @@ public class OrderController {
 
     @Autowired
     private PromoService promoService;
+
+    @Autowired
+    private ItemService itemService;
 
     @RequestMapping(value = "/order/update", method = RequestMethod.POST)
     public ResponseEntity updateOrder(@RequestBody OrderDTO orderDTO){
@@ -111,6 +115,15 @@ public class OrderController {
     @RequestMapping(value = "/order/all", method = RequestMethod.GET)
     public ResponseEntity getAllOrders(){
         List<OrderDTO> orderDTOList = orderService.getAllOrders();
+        return new ResponseEntity(orderDTOList, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/order/all/shop", method = RequestMethod.GET)
+    public ResponseEntity getOrdersFromShop(@RequestParam String shop){
+        List<OrderDTO> orderDTOList = orderService.getOrdersFromShop(shop);
+        for (OrderDTO orderDTO : orderDTOList){
+            orderDTO.setPrice(itemService.getTotalPriceFromCartList(orderDTO.getItems()));
+        }
         return new ResponseEntity(orderDTOList, HttpStatus.OK);
     }
 }

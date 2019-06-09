@@ -33,4 +33,10 @@ public interface OrderDAO {
     void addQuantityToItem(int cart_id, int quantity);
 
     List<OrderDTO> getAllOrders();
+
+    List<ItemDTO> getOrderItemsByOrderIdAndShop(int order_id, String shop);
+
+    List<OrderDTO> getOrdersFromShop(String shop);
+
+    List<OrderDTO> getLastMonthOrdersFromShop(String shop);
 }
