@@ -1,6 +1,7 @@
 package EasyShop.controllers;
 
 import EasyShop.dto.ChatDTO;
+import EasyShop.dto.ChatListDTO;
 import EasyShop.service.ChatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -45,5 +46,11 @@ public class ChatController {
 
         List<ChatDTO> conversation = chatService.getConversation(from_user, to_user);
         return new ResponseEntity(conversation, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/chat/history", method = RequestMethod.GET)
+    public ResponseEntity getChatHistory(@RequestParam int id){
+        List<ChatListDTO> chatHistory = chatService.getChatHistory(id);
+        return new ResponseEntity(chatHistory, HttpStatus.OK);
     }
 }

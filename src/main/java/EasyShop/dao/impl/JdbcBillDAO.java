@@ -17,9 +17,6 @@ public class JdbcBillDAO implements BillDAO {
     @Autowired
     NamedParameterJdbcTemplate jdbcTemplate;
 
-    @Autowired
-    NamedParameterJdbcTemplate namedJdbcTemplate;
-
     @Override
     public void insertBill(BillDTO billDTO){
         String sqlInsert = "" +
@@ -46,7 +43,7 @@ public class JdbcBillDAO implements BillDAO {
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
 
-        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+        return jdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
             ResultSet rs = preparedStatement.executeQuery();
             List<BillDTO> results = new ArrayList<>();
             while(rs.next()) {
@@ -77,7 +74,7 @@ public class JdbcBillDAO implements BillDAO {
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
         namedParameters.addValue("shop", shop);
 
-        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+        return jdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
             ResultSet rs = preparedStatement.executeQuery();
             List<BillDTO> results = new ArrayList<>();
             while(rs.next()) {
@@ -113,3 +110,4 @@ public class JdbcBillDAO implements BillDAO {
         jdbcTemplate.update(sqlUpdate, namedParameters);
     }
 }
+

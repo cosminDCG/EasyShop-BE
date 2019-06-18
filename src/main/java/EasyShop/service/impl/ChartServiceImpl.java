@@ -1,6 +1,7 @@
 package EasyShop.service.impl;
 
 import EasyShop.dao.ChartDAO;
+import EasyShop.dto.chart.OverallDateOrderDTO;
 import EasyShop.dto.chart.ShopDateOrderDTO;
 import EasyShop.service.ChartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,17 @@ public class ChartServiceImpl implements ChartService {
     }
     public List<ShopDateOrderDTO> getShopOrdersPerMonth(String shop){
         return chartDAO.getShopOrdersPerMonth(shop);
+    }
+    public List<ShopDateOrderDTO> getShopOrdersPerYear(String shop) { return chartDAO.getShopOrdersPerYear(shop); }
+    public List<OverallDateOrderDTO> getEasyOrdersPerWeek(){
+        return chartDAO.getEasyOrdersPerWeek();
+    }
+
+    public List<OverallDateOrderDTO> getEasyOrdersPerMonth() {
+        return chartDAO.getEasyOrdersPerMonth();
+    }
+
+    public List<OverallDateOrderDTO> getEasyOrdersPerYear() {
+        return chartDAO.getEasyOrdersPerYear();
     }
 }

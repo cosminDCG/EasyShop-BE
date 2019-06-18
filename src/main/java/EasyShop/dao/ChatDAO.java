@@ -10,4 +10,6 @@ public interface ChatDAO {
     void insertMessage(ChatDTO chatDTO);
 
     List<ChatDTO> getConversation(int from_user, int to_user);
+
+    List<ChatListDTO> getChatHistory(int user_id);
 }

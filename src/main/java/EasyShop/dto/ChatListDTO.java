@@ -1,18 +1,21 @@
 package EasyShop.dto;
 
+import java.util.List;
+
 public class ChatListDTO {
 
-    private int id;
-    private String photo;
-    private String lastMessage;
+   private int id;
+   private UserDTO user;
+   private List<ChatDTO> conversation;
+   private String lastMessage;
 
     public ChatListDTO() {
     }
 
-    public ChatListDTO(int id, String photo, String lastMessage) {
+    public ChatListDTO(int id, UserDTO user, String last_message) {
         this.id = id;
-        this.photo = photo;
-        this.lastMessage = lastMessage;
+        this.user = user;
+        this.lastMessage = last_message;
     }
 
     public int getId() {
@@ -23,12 +26,12 @@ public class ChatListDTO {
         this.id = id;
     }
 
-    public String getPhoto() {
-        return photo;
+    public UserDTO getUser() {
+        return user;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setUser(UserDTO user) {
+        this.user = user;
     }
 
     public String getLastMessage() {
@@ -37,5 +40,13 @@ public class ChatListDTO {
 
     public void setLastMessage(String lastMessage) {
         this.lastMessage = lastMessage;
+    }
+
+    public List<ChatDTO> getConversation() {
+        return conversation;
+    }
+
+    public void setConversation(List<ChatDTO> conversation) {
+        this.conversation = conversation;
     }
 }

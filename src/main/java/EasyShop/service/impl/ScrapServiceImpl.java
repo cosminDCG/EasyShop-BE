@@ -67,7 +67,9 @@ public class ScrapServiceImpl implements ScrapService {
         try{
             document = Jsoup.connect(page).get();
             String category = document.select("span.title-phrasing-xl").get(0).text().split("\\s+")[0];
+
             Elements links = document.select("a.js-product-url").select("a[href]");
+            
             List<String> urls = new ArrayList<>();
             for(int i = 0; i < links.size(); i++){
                 urls.add(links.get(i).attr("href"));

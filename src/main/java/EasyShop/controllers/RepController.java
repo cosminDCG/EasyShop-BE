@@ -18,8 +18,8 @@ public class RepController {
 
     @RequestMapping(value = "/rep", method = RequestMethod.GET)
     public ResponseEntity getShopRep(@RequestParam String shop){
-        int ok = repService.getShopRep(shop);
-        return new ResponseEntity(ok, HttpStatus.OK);
+        int id = repService.getShopRep(shop);
+        return new ResponseEntity(id, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/rep/insert", method = RequestMethod.POST)

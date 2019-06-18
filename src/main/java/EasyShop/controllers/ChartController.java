@@ -1,5 +1,6 @@
 package EasyShop.controllers;
 
+import EasyShop.dto.chart.OverallDateOrderDTO;
 import EasyShop.dto.chart.ShopDateOrderDTO;
 import EasyShop.service.ChartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,29 @@ public class ChartController {
     public ResponseEntity getShopOrdersPerMonth(@RequestParam String shop){
         List<ShopDateOrderDTO> shopDateOrderDTOList = chartService.getShopOrdersPerMonth(shop);
         return new ResponseEntity(shopDateOrderDTOList, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "stats/shop/orders/year", method = RequestMethod.GET)
+    public ResponseEntity getShopOrdersPerYear(@RequestParam String shop){
+        List<ShopDateOrderDTO> shopDateOrderDTOList = chartService.getShopOrdersPerYear(shop);
+        return new ResponseEntity(shopDateOrderDTOList, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "stats/easy/orders/week", method = RequestMethod.GET)
+    public ResponseEntity getEasyOrdersPerWeek(){
+        List<OverallDateOrderDTO> overallDateOrderDTOList = chartService.getEasyOrdersPerWeek();
+        return new ResponseEntity(overallDateOrderDTOList, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "stats/easy/orders/month", method = RequestMethod.GET)
+    public ResponseEntity getEasyOrdersPerMonth(){
+        List<OverallDateOrderDTO> overallDateOrderDTOList = chartService.getEasyOrdersPerMonth();
+        return new ResponseEntity(overallDateOrderDTOList, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "stats/easy/orders/year", method = RequestMethod.GET)
+    public ResponseEntity getEasyOrdersPerYear(){
+        List<OverallDateOrderDTO> overallDateOrderDTOList = chartService.getEasyOrdersPerYear();
+        return new ResponseEntity(overallDateOrderDTOList, HttpStatus.OK);
     }
 }
