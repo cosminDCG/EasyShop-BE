@@ -6,6 +6,7 @@ public class ShopDateOrderDTO {
 
     private Date date;
     private Float stats;
+    private Float stats2;
     private int quantity;
 
     public ShopDateOrderDTO() {
@@ -30,6 +31,14 @@ public class ShopDateOrderDTO {
 
     public void setStats(Float stats) {
         this.stats = stats;
+    }
+
+    public Float getStats2() {
+        return stats2;
+    }
+
+    public void setStats2(Float stats2) {
+        this.stats2 = stats2;
     }
 
     public int getQuantity() {

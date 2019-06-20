@@ -96,7 +96,7 @@ public class ItemController {
                 ItemDTO itemToAdd = itemService.getCheapestSinglePlace(criteria, shop);
                 currentShopItems.add(itemToAdd);
             }
-            if(itemService.countFoundItems(currentShopItems) > result.size() && itemService.countFoundItems(currentShopItems) != 0){
+            if(itemService.countFoundItems(currentShopItems) > itemService.countFoundItems(result) && itemService.countFoundItems(currentShopItems) != 0){
                 result = currentShopItems;
                 minim = itemService.getTotalPriceFromList(currentShopItems);
             }   else if (itemService.countFoundItems(currentShopItems) == result.size() && itemService.countFoundItems(currentShopItems) != 0){
