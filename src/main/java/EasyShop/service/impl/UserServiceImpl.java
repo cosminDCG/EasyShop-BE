@@ -10,6 +10,7 @@ import EasyShop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -66,6 +67,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         } else return userDTO;
     }
 
+    public UserDTO getUserByEmail(String email){
+        UserDTO userDTO = userDAO.getUserByEmail(email);
+        return userDTO;
+    }
+
     public Boolean changePassword(String email, String password, String newPassword){
 
         UserDTO userDTO = userDAO.getUserByEmail(email);
@@ -76,6 +82,13 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             userDAO.changePassword(userDTO.getId(), newPassword);
             return true;
         }
+    }
+
+    public Boolean recoverAccount(String email, String newPass){
+        UserDTO userDTO = userDAO.getUserByEmail(email);
+        newPass = passwordEncoder.encode(newPass);
+        userDAO.changePassword(userDTO.getId(), newPass);
+        return true;
     }
 
     public Boolean updateUser(UserDTO userDTO){

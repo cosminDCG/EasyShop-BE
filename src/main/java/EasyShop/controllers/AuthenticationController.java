@@ -5,6 +5,7 @@ import EasyShop.service.EmailService;
 import EasyShop.service.RepService;
 import EasyShop.service.ReviewService;
 import EasyShop.service.UserService;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -74,9 +75,6 @@ public class AuthenticationController {
     public ResponseEntity changePassword(@RequestParam String email, @RequestParam String password, @RequestParam String newPassword) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
-        if(currentPrincipalName.equals(email) == false){
-            return new ResponseEntity("No permission", HttpStatus.BAD_REQUEST);
-        }
         Boolean ok = userService.changePassword(email, password, newPassword);
         return new ResponseEntity(ok, HttpStatus.OK);
     }
@@ -147,6 +145,23 @@ public class AuthenticationController {
             return new ResponseEntity(ok, HttpStatus.OK);
         }
         else return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
+    }
+
+    @RequestMapping(value = "/user/recover", method = RequestMethod.POST)
+    public ResponseEntity recoverAccount(@RequestParam String email){
+        UserDTO userDTO = userService.getUserByEmail(email);
+
+        if(userDTO == null){
+            return new ResponseEntity(false, HttpStatus.BAD_REQUEST);
+        }else{
+            int length = 8;
+            boolean useLetters = true;
+            boolean useNumbers = false;
+            String newPass = RandomStringUtils.random(length, useLetters, useNumbers);
+            Boolean ok = userService.recoverAccount(email, newPass);
+            emailService.sendRecoveryMessage(userDTO, newPass);
+            return new ResponseEntity(ok, HttpStatus.OK);
+        }
     }
 
 }

@@ -11,4 +11,6 @@ public interface EmailService {
     void sendBanMessage(BanDTO banDTO);
 
     void sendPromoMessage(PromoDTO promoDTO);
+
+    void sendRecoveryMessage(UserDTO userDTO, String newPass);
 }

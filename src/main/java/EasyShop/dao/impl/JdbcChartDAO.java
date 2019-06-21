@@ -276,6 +276,7 @@ public class JdbcChartDAO implements ChartDAO {
                 " FROM orders o, cart c, items i " +
                 " WHERE o.order_id = c.order_id " +
                 " AND i.item_id = c.item_id " +
+                " AND o.state = 'complete' " +
                 " AND i.shop = :shop " +
                 " GROUP BY MONTH(o.data) " +
                 " HAVING o.data BETWEEN DATE_SUB(NOW(), INTERVAL 365 DAY) AND NOW() ";
@@ -431,6 +432,7 @@ public class JdbcChartDAO implements ChartDAO {
                 " FROM orders o, cart c, items i  " +
                 " WHERE o.order_id = c.order_id   " +
                 " AND i.item_id = c.item_id   " +
+                " AND o.state = 'complete' " +
                 " AND i.shop = :shop "  ;
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();

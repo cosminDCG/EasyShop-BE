@@ -10,6 +10,8 @@ public interface UserService {
 
     UserDTO login( String email, String password);
 
+    UserDTO getUserByEmail(String email);
+
     Boolean updateUser(UserDTO userDTO);
 
     Boolean insertProfilePicture(String path, int id);
@@ -21,6 +23,8 @@ public interface UserService {
     List<UserDTO> getAllUsers();
 
     Boolean changePassword(String email, String password, String newPassword);
+
+    Boolean recoverAccount(String email, String newPass);
 
     Boolean updateRole(int user_id, String role);
 

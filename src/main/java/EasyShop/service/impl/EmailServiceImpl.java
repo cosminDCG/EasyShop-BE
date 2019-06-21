@@ -15,6 +15,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
+import javax.jws.soap.SOAPBinding;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -73,6 +74,20 @@ public class EmailServiceImpl implements EmailService {
                         "Promo Code: " + promoDTO.getPromoCode() + "\n " +
                         "You can also see it in the promo section on your profile.\n \n " +
                         "Have a nice day!\n Easy Shop Team");
+
+        emailSender.send(message);
+    }
+
+    public void sendRecoveryMessage(UserDTO userDTO, String newPass){
+        SimpleMailMessage message = new SimpleMailMessage();
+
+        message.setTo(userDTO.getEmail());
+        message.setSubject("Easy Shop - Recover Your Account");
+        message.setText("Hello, " + userDTO.getFirstName() + " " + userDTO.getLastName() + "!\n \n " +
+                "We received a request for a new password for your account!\n" +
+                "Your new password is: " + newPass + "\n " +
+                "For security reasons, we recommend to change it as soon as possible!\n" +
+                "Have a nice day!\n Easy Shop Team");
 
         emailSender.send(message);
     }
