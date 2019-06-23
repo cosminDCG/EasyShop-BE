@@ -11,6 +11,8 @@ public interface ScrapService {
 
     List<ItemDTO> getItemsFromCarrefour(String page) throws InterruptedException, MalformedURLException;
 
+    List<ItemDTO> getItemsFromAuchan(String page);
+
     void saveLink(String page);
 
     List<String> getAllLinks();

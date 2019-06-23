@@ -3,6 +3,7 @@ package EasyShop.dao;
 import EasyShop.dto.CartDTO;
 import EasyShop.dto.ItemDTO;
 import EasyShop.dto.OrderDTO;
+import org.hibernate.criterion.Order;
 
 import java.util.List;
 
@@ -39,4 +40,6 @@ public interface OrderDAO {
     List<OrderDTO> getOrdersFromShop(String shop);
 
     List<OrderDTO> getLastMonthOrdersFromShop(String shop);
+
+    OrderDTO getLastOrderByUserId(int user_id);
 }

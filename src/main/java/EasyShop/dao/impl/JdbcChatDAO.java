@@ -147,7 +147,7 @@ public class JdbcChatDAO implements ChatDAO {
         for(int id : users){
             chatHistory.add(getLastMessageById(id, user_id));
         }
-
+        
         return chatHistory;
     }
     

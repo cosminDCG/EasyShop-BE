@@ -4,6 +4,7 @@ import EasyShop.dto.CartDTO;
 import EasyShop.dto.ItemDTO;
 import EasyShop.dto.OrderDTO;
 import EasyShop.dto.PromoDTO;
+import EasyShop.service.EmailService;
 import EasyShop.service.ItemService;
 import EasyShop.service.OrderService;
 import EasyShop.service.PromoService;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.mail.MessagingException;
 import java.util.List;
 
 @Controller
@@ -30,11 +32,15 @@ public class OrderController {
     @Autowired
     private ItemService itemService;
 
+    @Autowired
+    private EmailService emailService;
+
     @RequestMapping(value = "/order/update", method = RequestMethod.POST)
-    public ResponseEntity updateOrder(@RequestBody OrderDTO orderDTO){
+    public ResponseEntity updateOrder(@RequestBody OrderDTO orderDTO) throws MessagingException {
         
         promoService.setPromo(orderDTO);
         Boolean ok = orderService.updateOrder(orderDTO);
+        emailService.sendOrderEmail(orderService.getLastOrderByUserId(orderDTO.getUserId()));
         
         if (ok == true)
             return  new ResponseEntity(ok, HttpStatus.OK);

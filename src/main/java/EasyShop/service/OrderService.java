@@ -31,4 +31,6 @@ public interface OrderService {
     List<OrderDTO> getOrdersFromShop(String shop);
 
     List<OrderDTO> getLastMonthOrdersFromShop(String shop);
+
+    OrderDTO getLastOrderByUserId(int user_id);
 }

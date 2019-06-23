@@ -40,7 +40,9 @@ public class ItemController {
 
         if (page.contains("emag"))
             itemDTOList = scrapService.getItemsFromEmag(page);
-        else itemDTOList = scrapService.getItemsFromCarrefour(page);
+        else if(page.contains("carrefour"))
+                itemDTOList = scrapService.getItemsFromCarrefour(page);
+                else itemDTOList = scrapService.getItemsFromAuchan(page);
 
         for(ItemDTO itemDTO : itemDTOList){
             itemService.insertItem(itemDTO);

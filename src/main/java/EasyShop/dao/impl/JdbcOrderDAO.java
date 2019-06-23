@@ -85,6 +85,42 @@ public class JdbcOrderDAO implements OrderDAO {
     }
 
     @Override
+    public OrderDTO getLastOrderByUserId(int user_id){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    * " +
+                "FROM orders " +
+                "WHERE user_id =:user_id " +
+                "AND state = 'complete' " +
+                "ORDER BY order_id desc " +
+                "LIMIT 1";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("user_id", user_id);
+
+        return namedJdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            OrderDTO results = new OrderDTO();
+            while(rs.next()) {
+                results.setId(rs.getInt("order_id"));
+                results.setUserId(rs.getInt("user_id"));
+                results.setPrice(rs.getFloat("price"));
+                results.setState(rs.getString("state"));
+                results.setDeliveryPerson(rs.getString("delivery_person"));
+                results.setDeliveryAddress(rs.getString("delivery_address"));
+                results.setBillingPerson(rs.getString("billing_person"));
+                results.setBillingAddress(rs.getString("billing_address"));
+                results.setCashPay(rs.getString("cash_pay"));
+                results.setData(rs.getDate("data"));
+                results.setItems(getOrderItemsByOrderId(results.getId()));
+
+            }
+            return results;
+
+        });
+    }
+
+    @Override
     public int checkIfItemExistsInCart(int item_id, int order_id){
         String sqlSelect = "" +
                 "SELECT " +

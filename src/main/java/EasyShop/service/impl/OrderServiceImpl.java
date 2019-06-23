@@ -5,6 +5,7 @@ import EasyShop.dto.CartDTO;
 import EasyShop.dto.ItemDTO;
 import EasyShop.dto.OrderDTO;
 import EasyShop.service.OrderService;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -77,4 +78,6 @@ public class OrderServiceImpl implements OrderService {
     public List<OrderDTO> getLastMonthOrdersFromShop(String shop){
         return orderDAO.getLastMonthOrdersFromShop(shop);
     }
+
+    public OrderDTO getLastOrderByUserId(int user_id) { return orderDAO.getLastOrderByUserId(user_id); }
 }

@@ -21,12 +21,20 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -42,7 +50,20 @@ public class ScrapServiceImpl implements ScrapService {
     @Autowired
     private ScrapDAO scrapDAO;
 
-    public void saveImageFromUrl(String imageUrl, int imageName) throws IOException{
+    public void saveImageFromUrl(String imageUrl, int imageName) throws IOException, KeyManagementException, NoSuchAlgorithmException {
+        SSLContext context = SSLContext.getInstance("TLSv1.2");
+        TrustManager[] trustManager = new TrustManager[] {
+                new X509TrustManager() {
+                    public X509Certificate[] getAcceptedIssuers() {
+                        return new X509Certificate[0];
+                    }
+                    public void checkClientTrusted(X509Certificate[] certificate, String str) {}
+                    public void checkServerTrusted(X509Certificate[] certificate, String str) {}
+                }
+        };
+        context.init(null, trustManager, new SecureRandom());
+
+        HttpsURLConnection.setDefaultSSLSocketFactory(context.getSocketFactory());
         URL url = new URL(imageUrl);
         InputStream is = url.openStream();
         OutputStream os = new FileOutputStream(DASHBOARD_FOLDER + "/item" + imageName + ".jpg");
@@ -119,6 +140,10 @@ public class ScrapServiceImpl implements ScrapService {
             }
 
         }catch (IOException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (KeyManagementException e) {
             e.printStackTrace();
         }
 
@@ -206,6 +231,10 @@ public class ScrapServiceImpl implements ScrapService {
                 saveImageFromUrl(photo, imageCount);
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            } catch (KeyManagementException e) {
+                e.printStackTrace();
             }
             imageCount ++;
             
@@ -215,6 +244,78 @@ public class ScrapServiceImpl implements ScrapService {
         }
 
         driver.close();
+        return itemDTOList;
+    }
+
+
+    public List<ItemDTO> getItemsFromAuchan(String page){
+        List<ItemDTO> itemDTOList = new ArrayList<>();
+        Document document;
+        String shop = "Auchan";
+        int imageCount = itemDAO.getItemCount() + 1;
+
+        try{
+            document = Jsoup.connect(page).validateTLSCertificates(false).get();
+
+            String category = document.select("span.last").get(0).text();
+            Elements links = document.select("a.productMainLink").select("a[href]");
+
+            List<String> urls = new ArrayList<>();
+            for(int i = 0; i < links.size(); i++){
+                urls.add(links.get(i).attr("href"));
+            }
+
+            urls = urls.stream().distinct().collect(Collectors.toList());
+
+            for(String url : urls){
+                ItemDTO newItem = new ItemDTO();
+                List<ItemPropertiesDTO> newItemProperties = new ArrayList<>();
+                document = Jsoup.connect("https://www.auchan.ro" + url).validateTLSCertificates(false).get();
+                Elements properties = document.select("span.col-xs-12");
+                for(int i = 0; i < properties.size(); i = i + 2){
+                    ItemPropertiesDTO itemPropertiesDTO = new ItemPropertiesDTO();
+                    itemPropertiesDTO.setItemId(imageCount);
+                    itemPropertiesDTO.setName(properties.get(i).text());
+                    itemPropertiesDTO.setDescription(properties.get(i+1).text());
+                    newItemProperties.add(itemPropertiesDTO);
+                }
+
+                String title = document.select("h1").get(0).text();
+                String price = document.select("div.big-price").select("p.big-price-multiple").get(0).attr("data-price").replace(".", ",") + " Lei";
+                String[] description = document.select("h2").get(0).text().split("\\.");
+                String descToSave;
+                if (description.length < 5){
+                    descToSave = "";
+                }
+                else descToSave = description[0] + ". " + description[1] + ". " + description[2] + ". " + description[3] + ". " + description[4] + ".";
+
+                if(descToSave.length() >= 999)
+                    descToSave = descToSave.substring(0,999);
+
+                String photo = "https://www.auchan.ro" + document.select("img[src].imageLink").get(0).attr("src");
+                newItem.setName(title);
+                newItem.setDescription(descToSave);
+                newItem.setCategory(category);
+                newItem.setPrice(price);
+                newItem.setShop(shop);
+                newItem.setPhoto("item" + Integer.toString(imageCount) + ".jpg");
+                newItem.setProperties(newItemProperties);
+                itemDTOList.add(newItem);
+                saveImageFromUrl(photo, imageCount);
+                imageCount ++;
+
+
+                if(itemDTOList.size() == 20)
+                    break;
+            }
+
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (KeyManagementException e) {
+            e.printStackTrace();
+        }
         return itemDTOList;
     }
 
