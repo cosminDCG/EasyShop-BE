@@ -27,7 +27,7 @@ public class BanController {
     @RequestMapping(value = "/ban/add", method = RequestMethod.POST)
     public ResponseEntity addBan(@RequestBody BanDTO banDTO){
         BanDTO current_ban = banService.getActiveBanByUserId(banDTO.getBannedUser());
-        if(current_ban != null){
+        if(current_ban.getId() != 0){
             banService.updateBanDate(current_ban.getId(), banDTO.getBanDays(), banDTO.getReason());
             emailService.sendBanMessage(banService.getActiveBanByUserId(banDTO.getBannedUser()));
             return new ResponseEntity(true, HttpStatus.OK);

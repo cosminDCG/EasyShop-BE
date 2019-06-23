@@ -36,6 +36,8 @@ public class UserDTO {
     private int revNo;
     private int commNo;
     private String shop;
+    private BanDTO ban;
+    private int isShopBlocked;
 
     public UserDTO() {}
 
@@ -168,5 +170,21 @@ public class UserDTO {
 
     public void setShop(String shop) {
         this.shop = shop;
+    }
+
+    public BanDTO getBan() {
+        return ban;
+    }
+
+    public void setBan(BanDTO ban) {
+        this.ban = ban;
+    }
+
+    public int getIsShopBlocked() {
+        return isShopBlocked;
+    }
+
+    public void setIsShopBlocked(int isShopBlocked) {
+        this.isShopBlocked = isShopBlocked;
     }
 }

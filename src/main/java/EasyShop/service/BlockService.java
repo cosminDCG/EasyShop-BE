@@ -9,4 +9,6 @@ public interface BlockService {
     Boolean deleteBlock(String shop);
 
     List<String> getBlockedShops();
+
+    int checkIfShopIsBlocked(String shop);
 }

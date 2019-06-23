@@ -1,8 +1,6 @@
 package EasyShop.service.impl;
 
-import EasyShop.dao.RepDAO;
-import EasyShop.dao.ReviewDAO;
-import EasyShop.dao.UserDAO;
+import EasyShop.dao.*;
 import EasyShop.dto.OrderDTO;
 import EasyShop.dto.UserDTO;
 import EasyShop.service.OrderService;
@@ -40,6 +38,12 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     @Autowired
     private RepDAO repDAO;
 
+    @Autowired
+    private BanDAO banDAO;
+
+    @Autowired
+    private BlockDAO blockDAO;
+
     public Boolean registerUser(UserDTO userDTO) {
 
         UserDTO check = userDAO.getUserByEmail(userDTO.getEmail());
@@ -59,6 +63,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         userDTO.setRevNo(reviewDAO.getNoOfReviewsById(userDTO.getId()));
         userDTO.setCommNo(reviewDAO.getNoOfCommentsById(userDTO.getId()));
         userDTO.setShop(repDAO.getShopByRepId(userDTO.getId()));
+        userDTO.setBan(banDAO.getActiveBanByUserId(userDTO.getId()));
+        userDTO.setIsShopBlocked(blockDAO.checkIfShopIsBlocked(userDTO.getShop()));
 
         if (userDTO == null) {
             return null;

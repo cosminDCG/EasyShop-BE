@@ -27,4 +27,8 @@ public class BlockServiceImpl implements BlockService {
     public List<String> getBlockedShops(){
         return blockDAO.getBlockedShops();
     }
+
+    public int checkIfShopIsBlocked(String shop){
+        return blockDAO.checkIfShopIsBlocked(shop);
+    }
 }

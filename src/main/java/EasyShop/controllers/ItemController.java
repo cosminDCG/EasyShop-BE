@@ -9,6 +9,7 @@ import EasyShop.service.ScrapService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,13 +41,33 @@ public class ItemController {
         if (page.contains("emag"))
             itemDTOList = scrapService.getItemsFromEmag(page);
         else itemDTOList = scrapService.getItemsFromCarrefour(page);
-        
+
         for(ItemDTO itemDTO : itemDTOList){
             itemService.insertItem(itemDTO);
             itemPropertiesService.insertProperties(itemDTO.getProperties());
         }
         return new ResponseEntity(true, HttpStatus.OK);
     }
+
+//    @Scheduled(cron = "0 0 0 * * *", zone = "Europe/Bucharest")
+//    public void scheduledScrap() throws MalformedURLException, InterruptedException {
+//        List<String> links = scrapService.getAllLinks();
+//        itemService.truncateItems();
+//        itemPropertiesService.truncateProperties();
+//
+//        for(String link : links){
+//            List<ItemDTO> itemDTOList;
+//
+//            if (link.contains("emag"))
+//                itemDTOList = scrapService.getItemsFromEmag(link);
+//            else itemDTOList = scrapService.getItemsFromCarrefour(link);
+//
+//            for(ItemDTO itemDTO : itemDTOList){
+//                itemService.insertItem(itemDTO);
+//                itemPropertiesService.insertProperties(itemDTO.getProperties());
+//            }
+//        }
+//    }
 
     @RequestMapping(value = "/item/all", method = RequestMethod.GET)
     public ResponseEntity getAllItems(){

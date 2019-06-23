@@ -7,4 +7,5 @@ public interface BlockDAO {
     void insertBlock(String shop);
     void deleteBlock(String shop);
     List<String> getBlockedShops();
+    int checkIfShopIsBlocked(String shop);
 }

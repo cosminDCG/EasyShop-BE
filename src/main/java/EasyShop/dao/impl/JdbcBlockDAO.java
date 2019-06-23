@@ -63,4 +63,26 @@ public class JdbcBlockDAO implements BlockDAO {
 
         });
     }
+
+    @Override
+    public int checkIfShopIsBlocked(String shop){
+        String sqlSelect = "" +
+                "SELECT " +
+                "    * " +
+                "FROM block " +
+                " WHERE shop=:shop ";
+
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        namedParameters.addValue("shop", shop);
+
+        return jdbcTemplate.execute(sqlSelect, namedParameters, preparedStatement ->{
+            ResultSet rs = preparedStatement.executeQuery();
+            int results = 0;
+            while(rs.next()) {
+                results = 1;
+            }
+            return results;
+
+        });
+    }
 }
